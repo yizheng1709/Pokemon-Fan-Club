@@ -17,7 +17,9 @@ class Scraper
             end 
             # binding.pry
         end
-        
+        array = array[37,934]
+        array.collect {|pokemon| pokemon[:profile].prepend("https://www.pokemon.com")}
+
     end
 
 end
