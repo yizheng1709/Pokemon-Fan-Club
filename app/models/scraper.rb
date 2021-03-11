@@ -30,9 +30,13 @@ class Scraper
             if abilities.include?('  ')
                 abilities = abilities.split('  ').collect {|a| a.strip}.delete_if{|a| a.length < 2}.uniq
             end
+            description = page.css(".version-descriptions").text.strip
+            binding.pry
 
 
         end 
     end
 
 end
+
+Scraper.new.get_page
