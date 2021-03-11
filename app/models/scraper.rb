@@ -32,6 +32,7 @@ class Scraper
             end
             description = page.css(".version-descriptions").text.strip
             image = page.css(".active").attribute("src").children.text
+            category = page.css(".column-7").children.text.strip.split("  ").collect{|a| a.gsub("\n", "")}.delete_if{|a| a==""}[6]
             binding.pry
 
 
