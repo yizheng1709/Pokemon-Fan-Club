@@ -23,14 +23,15 @@ class Scraper
             page = Nokogiri::HTML(open(pokemon[:profile]))
             # pk = Pokemon.create
             name = page.css(".pokedex-pokemon-pagination-title").children.text.strip.split(' ')[0]
-            types = page.css(".dtm-type").children.children.children.text.strip.split(' ').uniq
+            types = page.css(".dtm-type").children.children.children.text.strip.split(' ').uniq.join(", ")
             weaknesses = page.css(".dtm-weaknesses").children.children.text.strip.split(' ').uniq
             weaknesses.shift
+            weaknesses = weaknesses.join(", ")
             abilities = page.css(".attribute-list").children.children.children.text.strip
             if abilities.include?('  ')
                 abilities = abilities.split('  ').collect {|a| a.strip}.delete_if{|a| a.length < 2}.uniq
             end
-            description = page.css(".version-descriptions").text.strip
+            description = page.css(".version-descriptions").text.strip.gsub("\n", "").split("  ").delete_if{|a| a==""}.join(" ")
             image = page.css(".active").attribute("src").children.text
             category = page.css(".column-7").children.text.strip.split("  ").collect{|a| a.gsub("\n", "")}.delete_if{|a| a==""}[6]
             height = page.css(".column-7").children.text.strip.split("  ").collect{|a| a.gsub("\n", "")}.delete_if{|a| a==""}[1].split("")
