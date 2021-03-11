@@ -31,6 +31,7 @@ class Scraper
                 abilities = abilities.split('  ').collect {|a| a.strip}.delete_if{|a| a.length < 2}.uniq
             end
             description = page.css(".version-descriptions").text.strip
+            image = page.css(".active").attribute("src").children.text
             binding.pry
 
 
