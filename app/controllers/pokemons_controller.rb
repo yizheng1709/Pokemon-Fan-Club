@@ -1,4 +1,4 @@
-class PokemonController < ApplicationController
+class PokemonsController < ApplicationController
     def index
         @pokemons = Pokemon.all
     end
