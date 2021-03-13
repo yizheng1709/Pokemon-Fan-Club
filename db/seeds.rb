@@ -10,7 +10,7 @@
 require 'nokogiri'
 require 'open-uri'
 require 'pry'
-require 'httparty'
+# require 'httparty'
 
 def get_page
     # binding.pry
