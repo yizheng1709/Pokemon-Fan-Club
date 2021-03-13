@@ -7,9 +7,9 @@ class CreatePokemons < ActiveRecord::Migration[6.1]
       t.string :abilities
       t.text :description
       t.string :image
-      t.string :category
       t.string :height
       t.string :weight
+      t.string :pokedex_number
 
       t.timestamps
     end

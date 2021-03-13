@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 2021_03_11_032404) do
     t.string "abilities"
     t.text "description"
     t.string "image"
-    t.string "category"
     t.string "height"
     t.string "weight"
+    t.string "pokedex_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

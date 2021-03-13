@@ -1,2 +1,13 @@
+<h1> <%= @pokemon.pokedex_number %>
 <h1> <%= @pokemon.name %> </h1>
+<img src="<%=@pokemon.image%>">
 <p> <%= @pokemon.description %> </p>
+<p> Height: <%= @pokemon.height %> </p>
+<p> Weight: <%= @pokemon.weight %> </p>
+<p> Type: <%= @pokemon.types %> </p> 
+<p> Weakness: <%= @pokemon.weaknesses %> </p>
+
+<% if @pokemon.abilities.include?("[") %>
+    <% @pokemon.abilities = @pokemon.abilities.split(",").collect{|a| a.gsub!(/\W+/, ' ').strip}.join(", ") %>
+<% end %>
+<p> Ability: <%= @pokemon.abilities %> </p>
