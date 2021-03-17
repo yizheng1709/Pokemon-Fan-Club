@@ -1,6 +1,7 @@
 class PokemonsController < ApplicationController
     def index
         @pokemons = Pokemon.all
+        render :layout => "main"
     end
 
     def show 

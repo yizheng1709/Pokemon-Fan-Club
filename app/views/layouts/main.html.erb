@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<h1 class="rotate-center"><span class="heading">Pokemon Fan Club</span></h1>
+</head>
+<body>
+<%= yield %>    
+<style>
+@font-face {
+  font-family: 'PokemonHollow';
+  src: url('/assets/PokemonHollow.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.rotate-center {
+    font-family: "PokemonSolid";
+    text-align: center;
+    letter-spacing: 3px;
+    color: #db0000;
+    font-size: 70px;
+    -webkit-text-stroke: 2px black;
+	-webkit-animation: rotate-center 0.6s ease-in-out both;
+	        animation: rotate-center 2.6s ease-in-out both;
+}
+
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+/* .heading {
+     transition: transform .2s;
+} */
+
+.rotate-center:hover {
+    transform: scale(1.17);
+    transition: 1s ease-in-out;
+}
+
+</style>
+
+</body>
+</html>
