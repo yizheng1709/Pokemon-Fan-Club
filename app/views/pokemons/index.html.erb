@@ -1,3 +1,6 @@
+<%# <h1 class="h1"> All Pokemon </h1> %>
+
+
 <% @pokemons.each do |p| %>
 <div class="container">
   <a href="<%=pokemon_path(p)%>"> <img src="<%=p.image%>" alt="<%=p.name%>" class="image">
@@ -8,6 +11,13 @@
 
 
 <style>
+@font-face {
+  font-family: 'PokemonSolid';
+  src: url('/assets/PokemonSolid.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {box-sizing: border-box}
 
 /* Container needed to position the overlay. Adjust the width as needed */
@@ -24,25 +34,57 @@
   height: auto;
   box-shadow: 5px 5px 5px 5px #ebebeb;
 }
+/* 
+.h1 {
+   font-family: "PokemonSolid"; 
+   letter-spacing: 6px;
+   font-size: 50px;
+     text-align: center;
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: rgba(255,0,0,0.9) 0px 0px 27px;
+  }
+  to {
+    text-shadow: rgba(199,73,73,0.73) 0px 0px 11px;
+  }
+} */
 
 /* The overlay effect - lays on top of the container and over the image */
 .overlay {
   position: absolute;
   bottom: 0;
   background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.5); /* Black see-through */
-  color: #f1f1f1;
+  background: rgba(196, 196, 196, 0.5); /* Black see-through */
+  color: black;
   width: 100%;
   transition: .5s ease;
   opacity:0;
-  color: white;
-  font-size: 20px;
-  padding: 20px;
+  color: black;
+  font-size: 30px;
+  padding: 5px;
   text-align: center;
+  letter-spacing: 3px;
+  font-family: "PokemonSolid";
 }
+
+
 
 /* When you mouse over the container, fade in the overlay title */
 .container:hover .overlay {
   opacity: 1;
+  transform: scale(1.07);
+  transition: 1s ease-in-out;
 }
+
+.container:hover .image {
+  opacity: 1;
+  transform: scale(1.07);
+  transition: 1s ease-in-out;
+}
+
 </style>
