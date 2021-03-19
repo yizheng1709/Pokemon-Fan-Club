@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<h1 class="rotate-center"><span class="heading">Pokemon Fan Club</span></h1>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<br><br><br>
+<div class="title"><h1 class="rotate-center">Pokemon Fan Club</h1></div>
+<%# <img src="/images/pokeball.gif"> %>
+<br><br>
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="<%= pokemons_path %>">All Pokemon</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  
+</ul>
 </head>
 <body>
-<%= yield %>    
+
+<%= yield %> 
+
 <style>
+
 @font-face {
   font-family: 'PokemonHollow';
-  src: url('/assets/PokemonHollow.ttf') format('truetype');
+  src: url('/fonts/PokemonHollow.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PokemonSolid';
+  src: url('/fonts/PokemonSolid.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -46,14 +72,11 @@
   }
 }
 
-/* .heading {
-     transition: transform .2s;
-} */
-
-.rotate-center:hover {
-    transform: scale(1.17);
-    transition: 1s ease-in-out;
+.title:hover {
+    transform: scale(1.1);
+    transition: 0.8s ease-in-out;
 }
+
 
 </style>
 

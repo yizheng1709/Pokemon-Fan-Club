@@ -1,10 +1,12 @@
 <%# <h1 class="h1"> All Pokemon </h1> %>
 
 
-<% @pokemons.each do |p| %>
+<% @pokemons.each_with_index do |p, index| %>
 <div class="container">
-  <a href="<%=pokemon_path(p)%>"> <img src="<%=p.image%>" alt="<%=p.name%>" class="image">
-  <div class="overlay"><%=p.name%></div> </a>
+  <a href="<%=pokemon_path(p)%>"> <img src="<%=p.image%>" class="image">
+
+    <div class="overlay"><%=p.name%></div> </a>
+ 
 </div>
 <%# <p><%= link_to p.name, pokemon_path(p.id) %> 
 <% end %>
@@ -60,18 +62,17 @@
   bottom: 0;
   background: rgb(0, 0, 0);
   background: rgba(196, 196, 196, 0.5); /* Black see-through */
-  color: black;
   width: 100%;
   transition: .5s ease;
   opacity:0;
-  color: black;
+  color: white;
+  -webkit-text-stroke: 2px #870000;
   font-size: 30px;
   padding: 5px;
   text-align: center;
   letter-spacing: 3px;
   font-family: "PokemonSolid";
 }
-
 
 
 /* When you mouse over the container, fade in the overlay title */
