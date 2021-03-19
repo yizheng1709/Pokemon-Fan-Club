@@ -1,15 +1,18 @@
 <%# <h1 class="h1"> All Pokemon </h1> %>
 
-
+<div class="display-box">
 <% @pokemons.each_with_index do |p, index| %>
 <div class="container">
   <a href="<%=pokemon_path(p)%>"> <img src="<%=p.image%>" class="image">
 
-    <div class="overlay"><%=p.name%></div> </a>
- 
+    <div class="overlay bottom"><%=p.name%></div> </a>
+ <%# in-line 
+ grid
+ get rid of div %>
 </div>
 <%# <p><%= link_to p.name, pokemon_path(p.id) %> 
 <% end %>
+</div>
 
 
 <style>
@@ -23,10 +26,18 @@
 * {box-sizing: border-box}
 
 /* Container needed to position the overlay. Adjust the width as needed */
+
+.display-box {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  row-gap: 30px;
+  /* display: inline-grid; */
+}
+
 .container {
-  position: relative;
-  width: 50%;
-  max-width: 300px;
+  width: 80%;
+  box-sizing: border-box;
+  
 }
 
 /* Make the image to responsive */
@@ -35,33 +46,15 @@
   width: 100%;
   height: auto;
   box-shadow: 5px 5px 5px 5px #ebebeb;
-}
-/* 
-.h1 {
-   font-family: "PokemonSolid"; 
-   letter-spacing: 6px;
-   font-size: 50px;
-     text-align: center;
-        -webkit-animation: glow 1s ease-in-out infinite alternate;
-        -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
+  border-radius: 55px;
 }
 
-@-webkit-keyframes glow {
-  from {
-    text-shadow: rgba(255,0,0,0.9) 0px 0px 27px;
-  }
-  to {
-    text-shadow: rgba(199,73,73,0.73) 0px 0px 11px;
-  }
-} */
-
-/* The overlay effect - lays on top of the container and over the image */
 .overlay {
-  position: absolute;
-  bottom: 0;
-  background: rgb(0, 0, 0);
-  background: rgba(196, 196, 196, 0.5); /* Black see-through */
+  position: relative;
+  top: 10%;
+  /* bottom: 30; */
+  /* background: rgb(0, 0, 0); */
+  background: rgba(196, 196, 196, 0.5); 
   width: 92%;
   transition: .5s ease;
   opacity:0;
@@ -74,8 +67,13 @@
   font-family: "PokemonSolid";
 }
 
+.bottom {
+  /* width: 50%; */
+      /* height: 50%; */
+      /* top:50%; */
+      /* margin: 0 auto; */
+}
 
-/* When you mouse over the container, fade in the overlay title */
 .container:hover .overlay {
   opacity: 1;
   transform: scale(1.07);
@@ -87,5 +85,6 @@
   transform: scale(1.07);
   transition: 1s ease-in-out;
 }
+
 
 </style>
