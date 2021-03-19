@@ -1,3 +1,5 @@
+<div class="poke-box">
+<br><br>
 <h1 class="name-header"> <%= pokemon.pokedex_number %> - <%= pokemon.name %> </h1>
 <img class="poke-pic" src="<%=pokemon.image%>">
 <p class="description"> <%= pokemon.description %> </p> <br><br>
@@ -7,8 +9,26 @@
 <p class="poke-info"> Weakness: <%= pokemon.weaknesses %> </p>
 
 <p class="poke-info"> Ability: <%= pokemon.check_abilities %> </p>
-<br><br><br><br>
+<br><br>
+</div>
+<br><br><br>
 <style>
+
+.poke-box {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width:900px;
+    border: 7px solid #c4d7ff;
+    border-radius: 55px;
+    box-shadow: 10px 10px 25px 10px #b3b3b3; 
+    background: rgba(99, 140, 222);
+    background: rgba(99, 140, 222, 0.22);
+}
+
+.poke-box:hover {
+    
+}
 
 .name-header {
     font-family: "MilkyNice";
@@ -24,16 +44,24 @@
 
 .poke-info {
     font-family: "MilkyNice";
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
-    width: 40em  
+    width: 30em;  
+    font-size: 25px;
+}
+
+.poke-info:hover {
+    color: #578cff;
 }
 
 .description {
     font-family: "MilkyNice";
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
-    width: 40em
+    width: 25em;
+    font-size: 30px;
 }
 
 </style>
