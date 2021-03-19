@@ -10,7 +10,7 @@
 <br><br>
 <ul class="nav justify-content-center">
   <li class="nav-bar">
-    <a class="nav-link active" aria-current="page" href="<%= pokemons_path %>">All Pokemon</a>
+    <a class="nav-link" aria-current="page" href="<%= pokemons_path %>">All Pokemon</a>
   </li>
   <li class="nav-bar">
     <a class="nav-link" href="#">My Teams</a>
@@ -120,21 +120,27 @@
     margin-right: auto;
 }
 
-.nav-bar {
+.nav-link {
   font-family: "PokemonSolid";
   letter-spacing: 3px;
   font-size: 28px;
-  -webkit-text-stroke: 1px #3570db;
-  color: #5e97ff;
+  -webkit-text-stroke: 1px #2753a3;
+  color: #5886db;
     /* background: rgba(137, 161, 190); */
 
   /* background: rgba(137, 161, 190, 0.5); */
 }
 
-.nav-bar:hover {
+.nav-link:hover {
   transform: scale(1.18);
   transition: 0.6s ease-in-out;
-  color: #3570db;
+  color: #9cc2ff;
+  -webkit-text-stroke: 1.5px #70a7ff;
+}
+
+.nav-link:active {
+  color: #cc3b3b;
+  -webkit-text-stroke: 1.5px #a10000;
 }
 
 .footer {
