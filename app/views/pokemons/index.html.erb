@@ -1,16 +1,11 @@
 <%# <h1 class="h1"> All Pokemon </h1> %>
 
 <div class="display-box">
-<% @pokemons.each_with_index do |p, index| %>
+<% @pokemons.each do |p| %>
 <div class="container">
-  <a href="<%=pokemon_path(p)%>"> <img src="<%=p.image%>" class="image">
-
-    <div class="overlay bottom"><%=p.name%></div> </a>
- <%# in-line 
- grid
- get rid of div %>
+  <a href="<%=pokemon_path(p)%>" class="poke-link"> <img src="<%=p.image%>" class="image">
+    <div class="overlay"><%=p.name%></div> </a>
 </div>
-<%# <p><%= link_to p.name, pokemon_path(p.id) %> 
 <% end %>
 </div>
 
@@ -31,13 +26,13 @@
   display: grid;
   grid-template-columns: auto auto auto auto;
   row-gap: 30px;
+  column-gap: 10px;
   /* display: inline-grid; */
 }
 
 .container {
-  width: 80%;
+  /* width: 80%; */
   box-sizing: border-box;
-  
 }
 
 /* Make the image to responsive */
@@ -49,13 +44,17 @@
   border-radius: 55px;
 }
 
+.poke-link {
+  text-decoration: none;
+}
+
 .overlay {
   position: relative;
-  top: 10%;
+  top: 5%;
   /* bottom: 30; */
   /* background: rgb(0, 0, 0); */
-  background: rgba(196, 196, 196, 0.5); 
-  width: 92%;
+  /* background: rgba(196, 196, 196, 0.5);  */
+  width: 100%;
   transition: .5s ease;
   opacity:0;
   color: white;
@@ -65,6 +64,7 @@
   text-align: center;
   letter-spacing: 3px;
   font-family: "PokemonSolid";
+  border-radius: 55px;
 }
 
 .bottom {
