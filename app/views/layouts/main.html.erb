@@ -8,13 +8,19 @@
 <br><br>
 <ul class="nav justify-content-center">
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="<%= pokemons_path %>">All Pokemon</a>
+    <a class="nav-link active" aria-current="page" href="<%= pokemons_path %>">  All Pokemon  </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link" href="#">  My Teams  </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link" href="#">  Link  </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">  Link  </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">  Log Out  </a>
   </li>
 </ul>
 <br><br><br>
@@ -27,21 +33,28 @@
 
 @font-face {
   font-family: 'PokemonHollow';
-  src: url('/fonts/PokemonHollow.ttf') format('truetype');
+  src: url('/assets/PokemonHollow.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'PokemonSolid';
-  src: url('/fonts/PokemonSolid.ttf') format('truetype');
+  src: url('/assets/PokemonSolid.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Chicken';
-  src: url('/fonts/Chicken.ttf') format('truetype');
+  src: url('/assets/Chicken.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MilkyNice';
+  src: url('/assets/MilkyNice.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -52,6 +65,7 @@
   letter-spacing: 3px;
   color: #cc3b3b;
   font-size: 70px;
+  text-shadow: 5px 5px 8px #949494;
   -webkit-text-stroke: 3px #a10000;
 	-webkit-animation: rotate-center 0.6s ease-in-out both;
 	        animation: rotate-center 2.6s ease-in-out both;
