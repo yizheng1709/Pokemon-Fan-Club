@@ -5,4 +5,8 @@ class Pokemon < ApplicationRecord
         end
         self.abilities
     end
+
+    # def self.random_gen
+    #     self.find_by(id: rand(1..899)).id
+    # end
 end

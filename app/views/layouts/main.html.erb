@@ -6,23 +6,27 @@
 <div class="title"><h1 class="rotate-center">Pokemon Fan Club</h1></div>
 <%# <img src="/images/pokeball.gif"> %>
 <br><br>
+<div class="nav">
+<br><br>
 <ul class="nav justify-content-center">
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="<%= pokemons_path %>">  All Pokemon  </a>
+    <a class="nav-link active" aria-current="page" href="<%= pokemons_path %>">All Pokemon</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">  My Teams  </a>
+    <a class="nav-link" href="#">My Teams</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">  Link  </a>
+    <a class="nav-link" href="<%=pokemon_path(rand(1..899))%>">Surprise Me</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">  Link  </a>
+    <a class="nav-link" href="#">Link</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">  Log Out  </a>
+    <a class="nav-link" href="#">Log Out</a>
   </li>
 </ul>
+<br><br>
+</div>
 <br><br><br>
 </head>
 <body>
@@ -96,6 +100,14 @@
 .title:hover {
     transform: scale(1.1);
     transition: 0.8s ease-in-out;
+}
+
+.nav {
+  background: rgba(137, 161, 190);
+  background: rgba(137, 161, 190, 0.5);
+  text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .nav-link {
