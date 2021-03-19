@@ -1,10 +1,10 @@
 <h1 class="name-header"> <%= pokemon.pokedex_number %> - <%= pokemon.name %> </h1>
 <img class="poke-pic" src="<%=pokemon.image%>">
-<div class="poke-desc"><p class="description"> <%= pokemon.description %> </p></div>
-<p> Height: <%= pokemon.height %> </p>
-<p> Weight: <%= pokemon.weight %> </p>
-<p> Type: <%= pokemon.types %> </p> 
-<p> Weakness: <%= pokemon.weaknesses %> </p>
+<p class="description"> <%= pokemon.description %> </p> <br><br>
+<p class="poke-info"> Height: <%= pokemon.height %> </p>
+<p class="poke-info"> Weight: <%= pokemon.weight %> </p>
+<p class="poke-info"> Type: <%= pokemon.types %> </p> 
+<p class="poke-info"> Weakness: <%= pokemon.weaknesses %> </p>
 
 <% if pokemon.abilities.include?("[") %>
     <% pokemon.abilities = pokemon.abilities.split(",").collect{|a| a.gsub!(/\W+/, ' ').strip}.join(", ") %>
@@ -25,8 +25,11 @@
   margin-right: auto;
 }
 
-.poke-desc {
-    width: 50%%
+.poke-info {
+    font-family: "MilkyNice";
+    margin-left: auto;
+    margin-right: auto;
+    width: 40em  
 }
 
 .description {
