@@ -9,7 +9,7 @@
 <% if pokemon.abilities.include?("[") %>
     <% pokemon.abilities = pokemon.abilities.split(",").collect{|a| a.gsub!(/\W+/, ' ').strip}.join(", ") %>
 <% end %>
-<p> Ability: <%= pokemon.abilities %> </p>
+<p class="poke-info"> Ability: <%= pokemon.abilities %> </p>
 <br><br><br><br>
 <style>
 
