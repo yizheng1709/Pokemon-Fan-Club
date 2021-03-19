@@ -6,10 +6,7 @@
 <p class="poke-info"> Type: <%= pokemon.types %> </p> 
 <p class="poke-info"> Weakness: <%= pokemon.weaknesses %> </p>
 
-<% if pokemon.abilities.include?("[") %>
-    <% pokemon.abilities = pokemon.abilities.split(",").collect{|a| a.gsub!(/\W+/, ' ').strip}.join(", ") %>
-<% end %>
-<p class="poke-info"> Ability: <%= pokemon.abilities %> </p>
+<p class="poke-info"> Ability: <%= pokemon.check_abilities %> </p>
 <br><br><br><br>
 <style>
 
