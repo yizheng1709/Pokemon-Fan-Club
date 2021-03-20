@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     end
     def new 
         if !current_user 
+            @user = User.new
             render :new 
         else 
             redirect_to user_path(current_user)
