@@ -14,4 +14,11 @@ class UsersController < ApplicationController
             redirect_to user_path(current_user)
         end
     end
+    def login 
+        if !current_user 
+            render :login 
+        else 
+            redirect_to user_path(current_user)
+        end
+    end
 end
