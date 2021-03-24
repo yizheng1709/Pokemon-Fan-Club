@@ -4,13 +4,13 @@ class UsersController < ApplicationController
             @user = current_user 
             render layout: "main"
         else 
-            redirect_to new_user_path
+            redirect_to root_path
         end
     end
     def new 
         if !current_user 
             @user = User.new
-            render :new 
+            render root_path 
         else 
             redirect_to user_path(current_user)
         end
