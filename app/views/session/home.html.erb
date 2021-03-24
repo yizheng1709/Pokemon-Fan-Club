@@ -1,6 +1,37 @@
-<div>
-<%= button_to "Continue My Pokemon Journey", login_path%>
+<br><br><br><br><br><br>
+<div class="home">
+<%= button_to "Continue My Pokemon Journey", login_path, class: 'front-button'%>
 <br><br>
-<%= button_to "Start My Pokemon Journey", new_user_path %>
+<%= button_to "Start My Pokemon Journey", new_user_path, class: 'front-button' %>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
+
+<style>
+.home {
+    text-align: center;
+}
+
+.front-button {
+    padding: 22px 26px;
+    border-radius: 15px;
+    transition-duration: 0.4s;
+    background-color: white;
+    font-size: 30px;
+    color: #9ed0ff;
+    font-family: "PokemonSolid";
+    box-shadow: 1px 1px 3px 3px #dedede;
+    border: 2px solid #9ed0ff;
+}
+
+.front-button:hover {
+  background-color: #9ed0ff;
+  color: white;
+  transform: scale(1.1);
+}
+
+.front-button:active {
+  transform: translateY(4px);
+}
+
+
+</style>
