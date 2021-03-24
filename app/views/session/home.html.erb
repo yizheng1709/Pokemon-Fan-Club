@@ -1,14 +1,45 @@
-<br><br><br><br><br><br>
+<br><br>
+<div class="home-pics">
+<img src="/assets/pika.png" class="in-line">
+<img src="/assets/eevee.png" class="in-line">
+<img src="/assets/bulb.png" class="in-line">
+<img src="/assets/char.png" class="in-line">
+<img src="/assets/jig.png" class="in-line">
+</div>
 <div class="home">
 <%= button_to "Continue My Pokemon Journey", login_path, class: 'front-button'%>
 <br><br>
-<%= button_to "Start My Pokemon Journey", new_user_path, class: 'front-button' %>
+ <%= button_to "Start My Pokemon Journey", new_user_path, class: 'front-button' %>
 </div>
-<br><br><br><br><br><br><br><br>
+<br><br><br><br>
 
 <style>
+.home-pics {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+}
+
+.in-line {
+    width: 150px;
+}
+
+.in-line:hover {
+    transform: scale(1.1);
+}
+
 .home {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width:900px;
+    padding: 22px 26px;
+    border: 7px solid #c4d7ff;
+    border-radius: 55px;
+    box-shadow: 8px 8px 10px 2px #b3b3b3; 
+    background: rgba(99, 140, 222);
+    background: rgba(99, 140, 222, 0.22);
 }
 
 .front-button {
