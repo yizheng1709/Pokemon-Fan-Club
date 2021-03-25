@@ -14,8 +14,29 @@
     width: 200px;
 }
 
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: red; }
+}
+
 .greeting {
     text-align: center;
+    /* font-family: "PokemonSolid"; */
+    border-right: .15em solid red;
+    margin: 0 auto;
+    letter-spacing: 3px;
+    padding-top: 5em;
+    white-space: nowrap;
+    padding: 20px;
+    overflow: hidden;
+    animation: 
+    typing 5.5s steps(120, end),
+    blink-caret .8s infinite;
 }
 
 </style>
