@@ -16,7 +16,7 @@
 <button type="button" value="Start My Pokemon Journey" class="front-button">
     Start My Pokemon Journey
 </button></a><br><br>
-<%= button_to 'Signing in with the GitHub strategy', '/auth/github', class:'front-button'%>
+<%= button_to 'Start or Continue with GitHub', '/auth/github', method: :post, class:'front-button'%>
 </div><br><br>
 <div style="width:300px; margin:auto; position:relative;">
 <audio controls autoplay preload loop=true src="/assets/poke1.mp3">
@@ -71,6 +71,7 @@
   /* -webkit-text-stroke: 1.3px rgba(144, 162, 249, 1); */
   color: white;
   transform: scale(1.1);
+  border: 2px solid rgba(165, 177, 233, 1);
 }
 
 .front-button:active {
