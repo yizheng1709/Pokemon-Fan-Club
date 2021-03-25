@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   resources :pokemons, :teams 
   resources :users, only: [:show, :new, :create] do #show user's homepage; link to every team(if any)
     resources :teams 

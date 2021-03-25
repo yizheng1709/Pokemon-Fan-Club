@@ -24,7 +24,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pry'
 # gem 'nokogiri'
 gem 'open-uri'
-gem 'httparty'
+gem 'omniauth'
+gem 'omniauth-github', github: 'omniauth/omniauth-github'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

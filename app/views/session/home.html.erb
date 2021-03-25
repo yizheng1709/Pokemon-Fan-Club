@@ -15,7 +15,8 @@
 <a href="<%=new_user_path%>">
 <button type="button" value="Start My Pokemon Journey" class="front-button">
     Start My Pokemon Journey
-</button></a>
+</button></a><br><br>
+<%= button_to 'Signing in with the GitHub strategy', '/auth/github', class:'front-button'%>
 </div><br><br>
 <div style="width:300px; margin:auto; position:relative;">
 <audio controls autoplay preload loop=true src="/assets/poke1.mp3">
