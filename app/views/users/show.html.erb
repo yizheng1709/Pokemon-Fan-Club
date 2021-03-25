@@ -1,11 +1,9 @@
 <img src="<%=@user.image if @user.image %>" class="propic">
+<br><br><br>
+<h2 class="greeting">It's great to see you, Trainer <%=@user.name%>!</h2>
 
 
 <style>
-
-*body {
-    cursor: url("/assets/Pokemon.cur"), default;
-}
 
 .propic {
     margin-left: auto;
@@ -16,5 +14,8 @@
     width: 200px;
 }
 
+.greeting {
+    text-align: center;
+}
 
 </style>
