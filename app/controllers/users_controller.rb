@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     def new 
         if !current_user 
             @user = User.new
-            render root_path 
+            render :'/session/home' 
         else 
             redirect_to user_path(current_user)
         end
