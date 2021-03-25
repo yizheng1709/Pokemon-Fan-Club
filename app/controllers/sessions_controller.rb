@@ -4,16 +4,32 @@ class SessionsController < ApplicationController
     def home 
         render layout: "welcome"
     end
-    def create
-        pp request.env['omniauth.auth']
-    
-        # We're going to save the authentication information in the session
-        # for demonstration purposes. We want to keep this data somewhere so that,
-        # after redirect, we have access to the returned data
-        session[:name] = request.env['omniauth.auth']['info']['name']
-        session[:omniauth_data] = request.env['omniauth.auth']
-    
-        redirect_to user_path(current_user)
-        #should I create a user with the datbase?
-      end
+    def new 
+
+    end
+    def create 
+
+    end
+    def destroy 
+        session.clear 
+        redirect_to root_path
+    end
+
+    def create_with_github
+        binding.pry
+        user = User.find_or_create_by(name: github_name) do |u|
+            u.password = 'ThisIsADummyPasswordThatBcrpytNeedsSoThatTheUserWillSave'
+        end
+        if user.save 
+            session[:user_id] = user.id
+            redirect_to user_path(current_user)
+        else 
+            redirect_to root_path
+        end 
+    end
+
+    private 
+    def github_name
+        request.env['omniauth.auth']['info']['name']
+    end
 end
