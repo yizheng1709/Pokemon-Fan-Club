@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
         binding.pry
         user = User.find_or_create_by(name: github_name) do |u|
             u.password = 'ThisIsADummyPasswordThatBcrpytNeedsSoThatTheUserWillSave'
+            u.image = 
         end
         if user.save 
             session[:user_id] = user.id
