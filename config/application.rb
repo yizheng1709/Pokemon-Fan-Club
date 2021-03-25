@@ -13,6 +13,7 @@ module PokemonFanClubProject
     config.load_defaults 6.1
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.assets.paths << Rails.root.join("app", "assets", "images")
+    config.assets.paths << Rails.root.join("app", "assets", "music")
 
 
     # Configuration for the application, engines, and railties goes here.

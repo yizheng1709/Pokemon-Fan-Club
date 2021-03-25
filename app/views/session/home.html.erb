@@ -7,11 +7,21 @@
 <img src="/assets/jig.png" class="in-line">
 </div>
 <div class="home">
-<%= button_to "Continue My Pokemon Journey", login_path, class: 'front-button'%>
+<a href="<%=login_path%>">
+<button type="button" value="Continue My Pokemon Journey" class="front-button">
+    Continue My Pokemon Journey
+</button></a>
 <br><br>
- <%= button_to "Start My Pokemon Journey", new_user_path, class: 'front-button' %>
+<a href="<%=new_user_path%>">
+<button type="button" value="Start My Pokemon Journey" class="front-button">
+    Start My Pokemon Journey
+</button></a>
+</div><br><br>
+<div style="width:300px; margin:auto; position:relative;">
+<audio controls autoplay preload loop=true src="/assets/poke1.mp3">
+</audio>
 </div>
-<br><br><br><br>
+<br><br>
 
 <style>
 .home-pics {
