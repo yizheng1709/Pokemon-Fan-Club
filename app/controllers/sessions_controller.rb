@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
         binding.pry
         user = User.find_or_create_by(name: github_name) do |u|
             u.password = 'ThisIsADummyPasswordThatBcrpytNeedsSoThatTheUserWillSave'
-            u.image = 
+            u.image = github_image
         end
         if user.save 
             session[:user_id] = user.id
@@ -32,5 +32,8 @@ class SessionsController < ApplicationController
     private 
     def github_name
         request.env['omniauth.auth']['info']['name']
+    end
+    def github_image 
+        request.env['omniauth.auth']['info']['image']
     end
 end
