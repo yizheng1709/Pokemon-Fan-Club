@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
     end
 
     def create_with_github
-        binding.pry
+        # binding.pry
         user = User.find_or_create_by(name: github_name) do |u|
             u.password = 'ThisIsADummyPasswordThatBcrpytNeedsSoThatTheUserWillSave'
             u.image = github_image

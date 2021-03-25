@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     def show 
         if current_user
-            binding.pry
+            # binding.pry
             render :show, layout: "main"
         else 
             redirect_to root_path
