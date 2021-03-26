@@ -1,38 +1,51 @@
- <h2 class="title"> New Dream Team! </h2><br><br>
+ <h2 class="team-title"> New Dream Team! </h2><br><br>
 <% @errors && @errors.each do |e| %>
   <li><%=e%></li>
 <%end%>
 <div class="form">
 <%= form_for(@team, url: user_teams_path(@user)) do |f|%>
-  <p><%=f.label "Team Name"%></p>
+  <p><%=f.label "Team Name", class: "member"%></p>
   <%=f.text_field(:name)%><br><br>
 
-  <%=f.label "Member 1"%>
+  <%=f.label "Member 1", class: "member"%><span class="small-space"></span>
   <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %><span class="space"></span>
-  <%=f.label "Member 2"%>
+  <%=f.label "Member 2", class: "member"%><span class="small-space"></span>
   <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %><br><br>
-  <%=f.label "Member 3"%>
+  <%=f.label "Member 3", class: "member"%><span class="small-space"></span>
   <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %><span class="space"></span>
-  <%=f.label "Member 4"%>
+  <%=f.label "Member 4", class: "member"%><span class="small-space"></span>
   <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %><br><br>
-  <%=f.label "Member 5"%>
-  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %><span class="space"></span>
-  <%=f.label "Member 6"%>
+  <%=f.label "Member 5", class: "member"%><span class="small-space"></span>
+  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name)%><span class="space"></span>
+  <%=f.label "Member 6", class: "member"%><span class="small-space"></span>
   <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %><br><br><br>
  
-  <%=f.submit("Create This Dream Team")%>
+  <%=f.submit("Create Dream Team")%>
 <%end%>
 
 </div>
 
 <style>
 
+.member {
+    font-family: "Chicken";
+    font-size: 25px;
+    color: rgba(165, 197, 233, 1);
+}
+.small-space {
+    padding-right: 10px;
+}
 .space {
      padding-right: 60px;
 }
 
-.title {
+.team-title {
     text-align: center;
+}
+
+.submit-team {
+    font-family: 'PokemonSolid';
+    letter-spacing: 2px;
 }
 
 .form {
