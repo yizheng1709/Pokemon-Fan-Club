@@ -16,12 +16,16 @@ class UsersController < ApplicationController
         end
     end
     def create 
-        if !current_user 
-            @user = User.create(user_params)
+        @user = User.create(user_params)
+        binding.pry
+        if @user.save 
+            session[:user_id] = @user.id
+            redirect_to user_path(@user)
         else 
-            redirect_to user_path(current_user)
+            render :new
         end
     end
+
     private 
     def user_params 
         params.require(:user).permit(:name, :password, :password_confirmation)
