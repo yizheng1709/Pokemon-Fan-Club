@@ -16,7 +16,13 @@ class TeamsController < ApplicationController
         end 
     end
     def new
-
+        if params[:user_id]
+            @user = User.find_by(id: params[:user_id])
+            @team = @user.measurements.build
+            @items = Item.all
+          else
+            redirect_to root_path
+          end
     end
     def create 
 
@@ -33,7 +39,7 @@ class TeamsController < ApplicationController
 
     private
 
-    def measurement_params
-      params.require(:measurement).permit(:quantity, :unit, :item_id)
+    def team_params
+      params.require(:team).permit(:user_id, :pokemon_id, :name)
     end
 end

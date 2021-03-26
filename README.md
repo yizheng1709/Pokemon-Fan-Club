@@ -25,9 +25,11 @@ Things you may want to cover:
 
 # Pokeman Fan Club
 
-The greatest joy for any Pokemon fan is being able to plan all of my dream teams! 
+The greatest joy for any Pokemon fan is being able to plan all of my dream teams!
 
-![Alt text](app/assets/images/readme1.gif?raw=true "Title")
+Home Page
+
+![Alt text](app/assets/images/readme1.gif?raw=true "Home Page")
 
 
 
@@ -41,7 +43,7 @@ Copy the code of this repo.
 
 In your terminal:
 
-    git clone <paste-github-repo-code>
+    git clone <github-repo-code>
 
 Go to the first level directory that contains all of MyLife's folders. 
 
@@ -51,7 +53,9 @@ Then,
 
     rails db:seed #this will load all of the Pokemon's data. This might take a few minutes as there is a lot of data.
 
-Finally go to http://localhost:3000/.
+Finally go to http://localhost:3000/. 
+
+Enjoy!
 
 ## Contributing
 

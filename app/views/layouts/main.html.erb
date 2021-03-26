@@ -13,7 +13,13 @@
     <a class="nav-link" aria-current="page" href="<%= pokemons_path %>">All Pokemon</a>
   </li>
   <li class="nav-bar">
-    <a class="nav-link" href="#">My Teams</a>
+  <div class="dropdown">
+    <a class="nav-link" href="<%=user_teams_path(current_user)%>">My Teams</a>
+      <div class="dropdown-content">
+        <a class="dropdownlink" href="<%=user_teams_path(current_user)%>">All Teams</a>
+        <a class="dropdownlink" href="<%=new_user_team_path(current_user)%>">Create New Team</a>
+      </div>
+  </div>
   </li>
   <li class="nav-bar">
     <a class="nav-link" href="<%=pokemon_path(rand(1..899))%>">Surprise Me</a>
@@ -158,6 +164,44 @@ html {
 .nav-link:active {
   color: #cc3b3b;
   -webkit-text-stroke: 1.5px #a10000;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fcfcfc;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #788cff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover 
+{background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.dropdownlink:hover {
+  color: #b52487;
+  transform: scale(1.03);
+}
+
+.dropdownlink:active {
+  color: #503b94;
 }
 
 .footer {
