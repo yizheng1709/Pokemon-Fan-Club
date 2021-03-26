@@ -26,8 +26,16 @@ class TeamsController < ApplicationController
           end
     end
     def create 
-
+        @team = Team.create(team_params)
+        @team.user = 
+        binding.pry
+        if @team.save
+            redirect_to user_team_path(@user, @team)
+        else 
+            render :new 
+        end 
     end
+
     def edit 
 
     end
