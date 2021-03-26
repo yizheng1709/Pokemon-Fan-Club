@@ -18,8 +18,8 @@ class TeamsController < ApplicationController
     def new
         if params[:user_id]
             @user = User.find_by(id: params[:user_id])
-            @team = @user.measurements.build
-            @items = Item.all
+            @team = @user.teams.build
+            @pokemons = Pokemon.all
           else
             redirect_to root_path
           end

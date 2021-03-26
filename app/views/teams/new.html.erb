@@ -6,17 +6,17 @@
   <%=f.label "Team Name"%>
   <%=f.number_field(:name)%>
   <%=f.label "Member One"%>
-  <%=f.collection_select(:pokemon_id, @Pokemon, :id, :name) %>
+  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %>
   <%=f.label "Member Two"%>
-  <%=f.collection_select(:pokemon_id, @Pokemon, :id, :name) %>
+  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %>
   <%=f.label "Member Three"%>
-  <%=f.collection_select(:pokemon_id, @Pokemon, :id, :name) %>
+  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %>
   <%=f.label "Member Four"%>
-  <%=f.collection_select(:pokemon_id, @Pokemon, :id, :name) %>
+  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %>
   <%=f.label "Member Five"%>
-  <%=f.collection_select(:pokemon_id, @Pokemon, :id, :name) %>
+  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %>
   <%=f.label "Member Six"%>
-  <%=f.collection_select(:pokemon_id, @Pokemon, :id, :name) %>
-  <%end%>
+  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %>
+ 
   <%=f.submit("Create This Dream Team")%>
 <%end%>
