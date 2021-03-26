@@ -1,22 +1,43 @@
- <h2> New Team! </h2>
+ <h2 class="title"> New Dream Team! </h2><br><br>
 <% @errors && @errors.each do |e| %>
   <li><%=e%></li>
 <%end%>
+<div class="form">
 <%= form_for(@team, url: user_teams_path(@user)) do |f|%>
-  <%=f.label "Team Name"%>
-  <%=f.text_field(:name)%>
-  <%=f.label "Member One"%>
-  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %>
-  <%=f.label "Member Two"%>
-  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %>
-  <%=f.label "Member Three"%>
-  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %>
-  <%=f.label "Member Four"%>
-  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %>
-  <%=f.label "Member Five"%>
-  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %>
-  <%=f.label "Member Six"%>
-  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %>
+  <p><%=f.label "Team Name"%></p>
+  <%=f.text_field(:name)%><br><br>
+
+  <%=f.label "Member 1"%>
+  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %><span class="space"></span>
+  <%=f.label "Member 2"%>
+  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %><br><br>
+  <%=f.label "Member 3"%>
+  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %><span class="space"></span>
+  <%=f.label "Member 4"%>
+  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %><br><br>
+  <%=f.label "Member 5"%>
+  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %><span class="space"></span>
+  <%=f.label "Member 6"%>
+  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %><br><br><br>
  
   <%=f.submit("Create This Dream Team")%>
 <%end%>
+
+</div>
+
+<style>
+
+.space {
+     padding-right: 60px;
+}
+
+.title {
+    text-align: center;
+}
+
+.form {
+    text-align: center;
+}
+
+</style>
+
