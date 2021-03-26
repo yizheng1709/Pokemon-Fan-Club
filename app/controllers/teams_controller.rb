@@ -50,6 +50,6 @@ class TeamsController < ApplicationController
     private
 
     def team_params
-      params.require(:team).permit(:user_id, :pokemon_id, :name)
+      params.require(:team).permit(:user_id, :name, :pokemon_ids => [])
     end
 end

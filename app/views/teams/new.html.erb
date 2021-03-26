@@ -9,8 +9,9 @@
 
   <%=f.fields_for :pokemons_teams do |poke_member| %>
   <%=poke_member.label "Member", class: "member"%><span class="small-space"></span>
-  <%=poke_member.collection_select("pokemon_id", @pokemons, :id, :name) %><span class="space"></span>
-  <%=poke_member.text_field (:pokemon_nickname) %>
+  <%=poke_member.collection_select( :pokemon_ids, @pokemons, :id, :name) %><span class="space"></span>
+  <%=poke_member.label "Pokemon Nickname", class: "member" %><span class="small-space"></span>
+  <%=poke_member.text_field (:pokemon_nickname) %> <br>
   <%end%>
   <%#input for pokemon nickname%>
   
@@ -42,11 +43,21 @@
     padding-right: 10px;
 }
 .space {
-     padding-right: 10px;
+     padding-right: 30px;
 }
 
 .team-title {
     text-align: center;
+    font-family: "PokemonSolid";
+    font-size: 39px;
+    letter-spacing: 2.9px;
+    color: #8ab9ff;
+    -webkit-text-stroke: 1.2px #bad6ff;
+}
+
+.team-title:hover {
+    color: #bad6ff;
+    -webkit-text-stroke: 1.2px #8ab9ff;
 }
 
 .submit-team {
