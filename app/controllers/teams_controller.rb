@@ -1,4 +1,5 @@
 class TeamsController < ApplicationController
+    layout "main"
     def show
         if current_user 
             @team = Team.find_by(id: params[:id])

@@ -64,8 +64,7 @@ of conduct, and the process for submitting pull requests to us.
 
 
 ## Authors
- - **Eva Yi Zheng** -  -
-    [Eva Yi Zheng](https://github.com/yizheng1709)
+ - [Eva Yi Zheng](https://github.com/yizheng1709)
 
 ## License
 
