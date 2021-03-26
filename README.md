@@ -27,7 +27,7 @@ Things you may want to cover:
 
 The greatest joy for any Pokemon fan is being able to plan all of my dream teams! 
 
-![alt text](/assets/readme1.mp4)
+![alt text](https://github.com/yizheng1709/pokemon-fan-club/blob/master/readme1.mp4?raw=true)
 
 
 ### Prerequisites
