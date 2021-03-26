@@ -1,12 +1,20 @@
 <%= form_for user do |f|%>
-<label>Username</label>
+<label class="form-cred">Username</label><br>
 <%= f.text_field :name %><br><br>
 
-<label>Password</label>
+<label class="form-cred">Password</label><br>
 <%= f.text_field :password %> <br><br>
 
-<label>Password Confirmation</label>
-<%= f.text_field :password_confirmation %> <br><br>
+<label class="form-cred">Password Confirmation</label><br>
+<%= f.text_field :password_confirmation %> <br><br><br>
 
-<%= f.submit "Become a Trainer" %>
+<%= f.submit "Start My Journey" %>
 <% end %>
+
+<style>
+
+.form-cred {
+    font-family: "Chicken";
+}
+
+</style>

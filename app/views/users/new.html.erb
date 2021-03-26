@@ -1,2 +1,52 @@
-<p>Hello Trainer! Please Sign Up Here</p>
+<div class="signup-form">
+<p class="signup-title">Start your Pokemon journey now!</p><br><br>
+<div class="form-pics">
+<img src="/assets/eevee1.png" class="form-line">
+<img src="/assets/char1.png" class="form-line">
+<img src="/assets/poly1.png" class="form-line">
+<img src="/assets/squir1.png" class="form-line">
+<img src="/assets/snorlax1.png" class="form-line">
+<img src="/assets/pika1.png" class="form-line">
+</div><br><br>
 <%= render partial: 'form', locals: {user: @user}%>
+</div>
+<br><br><br>
+<div class="form-pics">
+<img src="/assets/eevee1.png" class="form-line">
+<img src="/assets/char1.png" class="form-line">
+<img src="/assets/poly1.png" class="form-line">
+<img src="/assets/squir1.png" class="form-line">
+<img src="/assets/snorlax1.png" class="form-line">
+<img src="/assets/pika1.png" class="form-line">
+</div>
+<style>
+
+.form-line {
+    width: 100px;
+    padding-right: 8px;
+}
+
+.form-line:hover {
+    transform: scale(1.1);
+}
+
+
+.signup-title {
+    font-family: "PokemonSolid";
+    letter-spacing: 4px;
+    font-size: 40px;
+    color: #821a1a;
+    -webkit-text-stroke: 1px #cc3b3b;
+}
+
+.signup-form {
+    text-align: center;
+}
+
+.form-pics {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+}
+</style>
