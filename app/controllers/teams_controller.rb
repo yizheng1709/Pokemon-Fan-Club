@@ -20,6 +20,7 @@ class TeamsController < ApplicationController
         if params[:user_id]
             @user = User.find_by(id: params[:user_id])
             @team = @user.teams.build
+            6.times { @team.pokemons_teams.build }
             @pokemons = Pokemon.all
           else
             redirect_to root_path

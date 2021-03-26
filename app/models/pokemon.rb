@@ -1,6 +1,6 @@
 class Pokemon < ApplicationRecord
-    has_many :teams 
-    has_many :users, through: :teams 
+    has_many :pokemons_teams  
+    has_many :teams, through: :pokemons_teams 
     def check_abilities 
         if self.abilities.include?("[")
             self.abilities = self.abilities.split(",").collect{|a| a.gsub!(/\W+/, ' ').strip}.join(", ")

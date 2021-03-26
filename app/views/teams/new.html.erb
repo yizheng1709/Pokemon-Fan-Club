@@ -7,19 +7,25 @@
   <p><%=f.label "Team Name", class: "member"%></p>
   <%=f.text_field(:name)%><br><br>
 
-  <%=f.label "Member 1", class: "member"%><span class="small-space"></span>
-  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %><span class="space"></span>
-  <%=f.label "Member 2", class: "member"%><span class="small-space"></span>
-  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %><br><br>
-  <%=f.label "Member 3", class: "member"%><span class="small-space"></span>
-  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %><span class="space"></span>
-  <%=f.label "Member 4", class: "member"%><span class="small-space"></span>
-  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %><br><br>
-  <%=f.label "Member 5", class: "member"%><span class="small-space"></span>
-  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name)%><span class="space"></span>
-  <%=f.label "Member 6", class: "member"%><span class="small-space"></span>
-  <%=f.collection_select(:pokemon_id, @pokemons, :id, :name) %><br><br><br>
- 
+  <%=f.fields_for :pokemons_teams do |poke_member| %>
+  <%=poke_member.label "Member", class: "member"%><span class="small-space"></span>
+  <%=poke_member.collection_select("pokemon_id", @pokemons, :id, :name) %><span class="space"></span>
+  <%=poke_member.text_field (:pokemon_nickname) %>
+  <%end%>
+  <%#input for pokemon nickname%>
+  
+  <%#f.label "Member 2", class: "member"%>
+  <%#f.collection_select("pokemon_id", @pokemons, :id, :name) %>
+  <%#f.label "Member 3", class: "member"%>
+  <%#f.collection_select("pokemon_id", @pokemons, :id, :name) %>
+  <%#f.label "Member 4", class: "member"%>
+  <%#f.collection_select("pokemon_id", @pokemons, :id, :name) %>
+  <%#f.label "Member 5", class: "member"%>
+  <%#f.collection_select("pokemon_id", @pokemons, :id, :name)%>
+  <%#f.label "Member 6", class: "member"%>
+  <%#f.collection_select('pokemon_id', @pokemons, :id, :name) %>
+ <%#use additional helper methods; or use checkboxes with min/max; need nested input for nickname; use fields_for pokemon generating dropdown to create a new instance for the join table and will create nickname for pokemon (with pokemon_attributes [with id and nickname]); team_controller %>
+  <br><br><br>
   <%=f.submit("Create Dream Team")%>
 <%end%>
 
@@ -36,7 +42,7 @@
     padding-right: 10px;
 }
 .space {
-     padding-right: 60px;
+     padding-right: 10px;
 }
 
 .team-title {
