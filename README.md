@@ -27,7 +27,7 @@ Things you may want to cover:
 
 The greatest joy for any Pokemon fan is being able to plan all of my dream teams! 
 
-![Screenshot](readme1.mp4)
+![Alt text](app/assets/images/readme1.gif?raw=true "Title")
 
 
 ### Prerequisites
