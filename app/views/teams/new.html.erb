@@ -1,0 +1,22 @@
+ <h2> New Team! </h2>
+<% @errors && @errors.each do |e| %>
+  <li><%=e%></li>
+<%end%>
+<%= form_for(@team, url: user_teams_path(@user)) do |f|%>
+  <%=f.label "Team Name"%>
+  <%=f.number_field(:name)%>
+  <%=f.label "Member One"%>
+  <%=f.collection_select(:pokemon_id, @Pokemon, :id, :name) %>
+  <%=f.label "Member Two"%>
+  <%=f.collection_select(:pokemon_id, @Pokemon, :id, :name) %>
+  <%=f.label "Member Three"%>
+  <%=f.collection_select(:pokemon_id, @Pokemon, :id, :name) %>
+  <%=f.label "Member Four"%>
+  <%=f.collection_select(:pokemon_id, @Pokemon, :id, :name) %>
+  <%=f.label "Member Five"%>
+  <%=f.collection_select(:pokemon_id, @Pokemon, :id, :name) %>
+  <%=f.label "Member Six"%>
+  <%=f.collection_select(:pokemon_id, @Pokemon, :id, :name) %>
+  <%end%>
+  <%=f.submit("Create This Dream Team")%>
+<%end%>

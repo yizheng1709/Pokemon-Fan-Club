@@ -12,7 +12,28 @@ class TeamsController < ApplicationController
             @teams = current_user.teams
             render :index 
         else 
-            redirect_to new_user_path 
+            redirect_to root_path
         end 
+    end
+    def new
+
+    end
+    def create 
+
+    end
+    def edit 
+
+    end
+    def update
+
+    end
+    def destroy 
+
+    end
+
+    private
+
+    def measurement_params
+      params.require(:measurement).permit(:quantity, :unit, :item_id)
     end
 end

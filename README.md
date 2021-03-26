@@ -30,6 +30,7 @@ The greatest joy for any Pokemon fan is being able to plan all of my dream teams
 ![Alt text](app/assets/images/readme1.gif?raw=true "Title")
 
 
+
 ### Prerequisites
 
 This little web application was mainly written with the Ruby language and uses several gems. The Installing section will show you how to install this gem! 
