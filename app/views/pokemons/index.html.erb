@@ -1,4 +1,4 @@
-<%# <h1 class="h1"> All Pokemon </h1> %>
+
 
 <div class="display-box">
 <% @pokemons.each do |p| %>
@@ -12,8 +12,6 @@
 
 <style>
 
-
-
 @font-face {
   font-family: 'PokemonSolid';
   src: url('/assets/PokemonSolid.ttf') format('truetype');
@@ -23,22 +21,17 @@
 
 * {box-sizing: border-box}
 
-/* Container needed to position the overlay. Adjust the width as needed */
-
 .display-box {
   display: grid;
   grid-template-columns: auto auto auto auto auto auto;
   row-gap: 30px;
   column-gap: 10px;
-  /* display: inline-grid; */
 }
 
 .container {
-  /* width: 80%; */
   box-sizing: border-box;
 }
 
-/* Make the image to responsive */
 .image {
   display: block;
   width: 280px;
@@ -54,9 +47,6 @@
 .overlay {
   position: relative;
   top: 5%;
-  /* bottom: 30; */
-  /* background: rgb(0, 0, 0); */
-  /* background: rgba(196, 196, 196, 0.5);  */
   width: 100%;
   transition: .5s ease;
   opacity:0;
@@ -70,17 +60,10 @@
   border-radius: 55px;
 }
 
-.bottom {
-  /* width: 50%; */
-      /* height: 50%; */
-      /* top:50%; */
-      /* margin: 0 auto; */
-}
-
 .container:hover .overlay {
   opacity: 1;
   transform: scale(1.07);
-  transition: 1s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .container:hover .image {
@@ -89,10 +72,5 @@
   transition: 1s ease-in-out;
 
 }
-
-/* .container:hover {
-  cursor: url(ditto.png), default;
-} */
-
 
 </style>

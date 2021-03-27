@@ -1,5 +1,13 @@
-<h2><%= @team.name %></h2>
-<br>
+<h2 class="show-title">
+<span class="star-one">✰</span>
+<span class="star-two">✰</span>
+<span class="star-three">✰</span>
+<span class="span-team-name"><%= @team.name %></span>
+<span class="star-four">✰</span>
+<span class="star-five">✰</span>
+<span class="star-six">✰</span>
+</h2>
+<br><br><br><br>
 <%#binding.pry%>
 <div class="show-grid">
 <% @pokemons.each do |poke|%>
@@ -13,6 +21,15 @@
 </div>
 
 <style>
+
+.show-title {
+    font-size: 50px;
+    text-align: center;
+    font-family: "PokemonSolid";
+    letter-spacing: 10px;
+    color: #9f98d6;
+    -webkit-text-stroke: 2px #6a60b5;
+}
 
 .show-grid {
   display: grid;
@@ -42,9 +59,6 @@
 .overlay {
   position: relative;
   top: 5%;
-  /* bottom: 30; */
-  /* background: rgb(0, 0, 0); */
-  /* background: rgba(196, 196, 196, 0.5);  */
   width: 100%;
   transition: .5s ease;
   opacity:0;
@@ -67,10 +81,38 @@
 .container:hover .show-image {
   opacity: 1;
   transform: scale(1.07);
-  transition: 1s ease-in-out;
+  transition: 0.5s ease-in-out;
   
 }
 
+.span-team-name:hover {
+    color: #acd97c;
+    -webkit-text-stroke: 2px #7eb048;
+}
+
+.star-one:hover {
+    color:#ff6666;
+}
+
+.star-two:hover {
+    color:#ffa166;
+}
+
+.star-three:hover {
+    color:#ffd166;
+}
+
+.star-four:hover {
+    color:#91d9ff;
+}
+
+.star-five:hover {
+    color:#a8abff;
+}
+
+.star-six:hover {
+    color:#e7bfff;
+}
 </style>
 
 
