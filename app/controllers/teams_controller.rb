@@ -41,11 +41,17 @@ class TeamsController < ApplicationController
     end
 
     def edit 
-
+        if current_user 
+            @team = Team.find_by_id(params[:id])
+        else 
+            redirect_to root_path
+        end 
     end
+
     def update
 
     end
+    
     def destroy 
 
     end
