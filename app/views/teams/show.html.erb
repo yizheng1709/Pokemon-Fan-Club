@@ -1,12 +1,12 @@
-<h2 class="show-title">
-<span class="star-one">✰</span>
-<span class="star-two">✰</span>
-<span class="star-three">✰</span>
+<p class="p-team">
+<span class="star-one">&#x2734;</span>
+<span class="star-two">&#x2734;</span>
+<span class="star-three">&#x2734;</span>
 <span class="span-team-name"><%= @team.name %></span>
-<span class="star-four">✰</span>
-<span class="star-five">✰</span>
-<span class="star-six">✰</span>
-</h2>
+<span class="star-four">&#x2734;</span>
+<span class="star-five">&#x2734;</span>
+<span class="star-six">&#x2734;</span>
+</p>
 <br><br><br><br>
 <%#binding.pry%>
 <div class="show-grid">
@@ -85,29 +85,85 @@
   
 }
 
+.p-team {
+    text-align: center;
+}
+
+.span-team-name {
+    font-size: 50px;
+    text-align: center;
+    font-family: "PokemonSolid";
+    letter-spacing: 10px;
+    color: #9f98d6;
+    -webkit-text-stroke: 2px #6a60b5;
+}
+
 .span-team-name:hover {
     color: #acd97c;
     -webkit-text-stroke: 2px #7eb048;
+}
+
+.star-one {
+    font-size: 50px;
+    color: #fa9d9d;
+    font-family: "PokemonSolid";
+    padding-left: 8px;
 }
 
 .star-one:hover {
     color:#ff6666;
 }
 
+.star-two {
+    font-size: 50px;
+    color: #ffc5a1;
+    font-family: "PokemonSolid";
+    padding-left: 8px;
+}
+
 .star-two:hover {
     color:#ffa166;
+}
+
+.star-three {
+    font-size: 50px;
+    color: #ffe6ab;
+    font-family: "PokemonSolid";
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 .star-three:hover {
     color:#ffd166;
 }
 
+.star-four {
+    font-size: 50px;
+    color: #bfe9ff;
+    font-family: "PokemonSolid";
+    padding-left: 8px;
+}
+
 .star-four:hover {
     color:#91d9ff;
 }
 
+.star-five {
+    font-size: 50px;
+    color: #d1d3ff;
+    font-family: "PokemonSolid";
+    padding-left: 8px;
+}
+
 .star-five:hover {
     color:#a8abff;
+}
+
+.star-six {
+    font-size: 50px;
+    color:#f6e8ff;
+    font-family: "PokemonSolid";
+    padding-left: 8px;
 }
 
 .star-six:hover {
