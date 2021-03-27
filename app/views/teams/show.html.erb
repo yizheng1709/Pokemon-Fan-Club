@@ -15,7 +15,7 @@
 <div class="container">
 <a href="<%=pokemon_path(poke)%>" class="poke-link">
 <img src="<%=poke.image%>" class="show-image">
-<div class="overlay">replace w/ nickname</div>
+<div class="overlay"><%= @team.pokemons_teams.find_by(pokemon_id: poke.id).pokemon_nickname%></div>
 </a>
 </div>
 <%end%>

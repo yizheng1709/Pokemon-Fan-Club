@@ -33,7 +33,7 @@ class TeamsController < ApplicationController
         # binding.pry
         @team.user = current_user
         if @team.save
-            binding.pry
+            # binding.pry
             redirect_to user_team_path(@user, @team)
         else 
             render :new 
@@ -55,4 +55,5 @@ class TeamsController < ApplicationController
     def team_params
       params.require(:team).permit(:user_id, :name, :pokemons_teams_attributes => [:pokemon_nickname, :pokemon_id])
     end
+    
 end
