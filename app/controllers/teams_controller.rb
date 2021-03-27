@@ -30,9 +30,10 @@ class TeamsController < ApplicationController
     end
     def create 
         @team = Team.create(team_params)
-        @team.user = current_user
         # binding.pry
+        @team.user = current_user
         if @team.save
+            binding.pry
             redirect_to user_team_path(@user, @team)
         else 
             render :new 

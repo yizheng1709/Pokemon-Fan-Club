@@ -5,7 +5,7 @@
 <div class="form">
 <%= form_for(@team, url: user_teams_path(@user)) do |f|%>
   <p><%=f.label "Team Name", class: "member"%></p>
-  <%=f.text_field(:name)%><br><br><br>
+  <%=f.text_field (:name), class: "create_input"%><br><br><br>
 
   <%=f.fields_for :pokemons_teams do |poke_member| %>
   <%=poke_member.label "Member", class: "member"%><span class="small-space"></span>
@@ -13,21 +13,10 @@
   <%=poke_member.label "Pokemon Nickname", class: "member" %><span class="small-space"></span>
   <%=poke_member.text_field (:pokemon_nickname), class: "create_input" %> <br><br>
   <%end%>
-  <%#input for pokemon nickname%>
   
-  <%#f.label "Member 2", class: "member"%>
-  <%#f.collection_select("pokemon_id", @pokemons, :id, :name) %>
-  <%#f.label "Member 3", class: "member"%>
-  <%#f.collection_select("pokemon_id", @pokemons, :id, :name) %>
-  <%#f.label "Member 4", class: "member"%>
-  <%#f.collection_select("pokemon_id", @pokemons, :id, :name) %>
-  <%#f.label "Member 5", class: "member"%>
-  <%#f.collection_select("pokemon_id", @pokemons, :id, :name)%>
-  <%#f.label "Member 6", class: "member"%>
-  <%#f.collection_select('pokemon_id', @pokemons, :id, :name) %>
  <%#use additional helper methods; or use checkboxes with min/max; need nested input for nickname; use fields_for pokemon generating dropdown to create a new instance for the join table and will create nickname for pokemon (with pokemon_attributes [with id and nickname]); team_controller %>
   <br><br><br>
-  <%=f.submit("Create Dream Team")%>
+  <%=f.submit "Create Dream Team" , :class => "submit-input"%>
 <%end%>
 
 </div>
@@ -35,7 +24,8 @@
 <style>
 
 .create_input {
-    border: 2px solid blue;
+    border: 2px solid #d9dbff;
+    border-radius: 10px;
 }
 
 .member {
@@ -71,6 +61,11 @@
 
 .form {
     text-align: center;
+}
+
+.submit-input {
+    border-radius: 10px;
+
 }
 
 </style>

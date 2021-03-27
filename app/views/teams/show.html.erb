@@ -11,10 +11,11 @@
 <%#binding.pry%>
 <div class="show-grid">
 <% @pokemons.each do |poke|%>
+<%#binding.pry%>
 <div class="container">
 <a href="<%=pokemon_path(poke)%>" class="poke-link">
 <img src="<%=poke.image%>" class="show-image">
-<div class="overlay"><%=poke.name%></div>
+<div class="overlay">replace w/ nickname</div>
 </a>
 </div>
 <%end%>
@@ -62,8 +63,8 @@
   width: 100%;
   transition: .5s ease;
   opacity:0;
-  color: white;
-  -webkit-text-stroke: 2px #578cff;
+  color: #cee8be;
+  -webkit-text-stroke: 2px #6fb046;
   font-size: 30px;
   padding: 5px;
   text-align: center;
@@ -75,7 +76,7 @@
 .container:hover .overlay {
   opacity: 1;
   transform: scale(1.07);
-  transition: 1s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .container:hover .show-image {
