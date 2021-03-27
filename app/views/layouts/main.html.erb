@@ -3,11 +3,10 @@
 <head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 <br><br><br>
-<div class="title"><h1 class="rotate-center"><img src="/assets/pokeball.gif" class="ball">Pokémon Fan Club<img src="/assets/pokeball.gif" class="ball"></h1></div>
+<div class="title"><a href="<%=user_path(current_user)%>" class="no-link"><h1 class="rotate-center"><img src="/assets/pokeball.gif" class="ball">Pokémon Fan Club<img src="/assets/pokeball.gif" class="ball"></h1></a></div>
 
 <br><br>
-<div class="nav">
-<br><br>
+<div class="nav1">
 <ul class="nav justify-content-center">
   <li class="nav-bar">
     <a class="nav-link" aria-current="page" href="<%= pokemons_path %>">All Pokémon</a>
@@ -83,8 +82,6 @@ html {
 
 .ball {
   width: 5%;
-  /* box-shadow: 0px 6px 5px #ccc;
-  border-radius:190px; */
 }
 
 .rotate-center {
@@ -95,8 +92,6 @@ html {
   font-size: 70px;
   text-shadow: 5px 5px 8px #949494;
   -webkit-text-stroke: 3px #a10000;
-	/* -webkit-animation: rotate-center 0.6s ease-in-out both; */
-	        /* animation: rotate-center 2.6s ease-in-out both; */
 }
 
 @-webkit-keyframes rotate-center {
@@ -124,15 +119,20 @@ html {
 .title:hover {
     transform: scale(1.1);
     transition: 0.8s ease-in-out;
-    /* cursor: url("/assets/Pokemon.cur"), default; */
+
 }
 
-.nav {
-    background: #d4e2ff;
-  /* background: rgba(137, 161, 190, 0.5); */
+.no-link {
+  text-decoration: none;
+}
+
+.nav1 {
+    background: rgba(214, 228, 255, 0.56);
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    border: 3px solid #c4d7ff;
+    height: 90px;
 }
 
 .nav-bar {
@@ -145,12 +145,7 @@ html {
   letter-spacing: 3px;
   font-size: 28px;
   -webkit-text-stroke: 1px #8fb4ff;
-  /* -webkit-text-stroke: 0.2px white; */
   color: #5886db;
-  /* margin: 0 0 10px 0; */
-    /* background: rgba(137, 161, 190); */
-
-  /* background: rgba(137, 161, 190, 0.5); */
 }
 
 .nav-link:hover {
@@ -158,7 +153,6 @@ html {
   transition: 0.4s ease-in-out;
   color: #8458db;
   -webkit-text-stroke: 1.5px #9c7be0;
-  /* cursor: url("/assets/Pokemon.cur"), default; */
 }
 
 .nav-link:active {
@@ -209,10 +203,12 @@ html {
 }
 
 .footer {
-  background: #d4e2ff;
+  background: rgba(214, 228, 255, 0.56);
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  border: 1px solid #c4d7ff;
+
 }
 
 .bot {
