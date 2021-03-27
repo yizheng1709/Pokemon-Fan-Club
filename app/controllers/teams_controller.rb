@@ -1,11 +1,13 @@
 class TeamsController < ApplicationController
     layout "main"
     def show
-        if current_user 
-            @team = Team.find_by(id: params[:id])
+        if current_user
+            binding.pry
+            @team = @user.teams.find_by(id: params[:id])
+            @pokemons = @team.pokemons 
             render :show
         else 
-            redirect_to new_user_path 
+            redirect_to root_path 
         end    
     end
     def index 
@@ -50,6 +52,6 @@ class TeamsController < ApplicationController
     private
 
     def team_params
-      params.require(:team).permit(:user_id, :name, :pokemon_ids => [])
+      params.require(:team).permit(:user_id, :name, :pokemons_teams_attributes => [:pokemon_nickname, :pokemon_id])
     end
 end

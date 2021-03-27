@@ -1,1 +1,4 @@
-<%= team.name %>
+<%= @team.name %><br>
+<% @team.pokemons_teams.pokemons.each do |poke|%>
+<%= poke.name %>
+<%=end%>

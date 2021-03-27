@@ -5,13 +5,13 @@
 <div class="form">
 <%= form_for(@team, url: user_teams_path(@user)) do |f|%>
   <p><%=f.label "Team Name", class: "member"%></p>
-  <%=f.text_field(:name)%><br><br>
+  <%=f.text_field(:name)%><br><br><br>
 
   <%=f.fields_for :pokemons_teams do |poke_member| %>
   <%=poke_member.label "Member", class: "member"%><span class="small-space"></span>
-  <%=poke_member.collection_select( :pokemon_ids, @pokemons, :id, :name) %><span class="space"></span>
+  <%=poke_member.collection_select(:pokemon_id, @pokemons, :id, :name) %><span class="space"></span>
   <%=poke_member.label "Pokemon Nickname", class: "member" %><span class="small-space"></span>
-  <%=poke_member.text_field (:pokemon_nickname) %> <br>
+  <%=poke_member.text_field (:pokemon_nickname), class: "create_input" %> <br><br>
   <%end%>
   <%#input for pokemon nickname%>
   
@@ -33,6 +33,10 @@
 </div>
 
 <style>
+
+.create_input {
+    border: 2px solid blue;
+}
 
 .member {
     font-family: "Chicken";
