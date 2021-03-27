@@ -3,9 +3,12 @@
 <%#binding.pry%>
 <div class="show-grid">
 <% @pokemons.each do |poke|%>
+<div class="container">
 <a href="<%=pokemon_path(poke)%>" class="poke-link">
 <img src="<%=poke.image%>" class="show-image">
+<div class="overlay"><%=poke.name%></div>
 </a>
+</div>
 <%end%>
 </div>
 
@@ -14,8 +17,8 @@
 .show-grid {
   display: grid;
   grid-template-columns: auto auto auto;
-  row-gap: 50px;
-  column-gap: 50px;
+  row-gap: 70px;
+  column-gap: 70px;
   text-align: center;
   justify-content: center;
 }
@@ -25,9 +28,48 @@
   width: 340px;
   height: auto;
   box-shadow: 3px 4px 9px 7px #f7faff;
+  border-radius: 155px;
+}
+
+.container {
+  box-sizing: border-box;
+}
+
+.poke-link {
+  text-decoration: none;
+}
+
+.overlay {
+  position: relative;
+  top: 5%;
+  /* bottom: 30; */
+  /* background: rgb(0, 0, 0); */
+  /* background: rgba(196, 196, 196, 0.5);  */
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  -webkit-text-stroke: 2px #578cff;
+  font-size: 30px;
+  padding: 5px;
+  text-align: center;
+  letter-spacing: 3px;
+  font-family: "PokemonSolid";
   border-radius: 55px;
 }
 
+.container:hover .overlay {
+  opacity: 1;
+  transform: scale(1.07);
+  transition: 1s ease-in-out;
+}
+
+.container:hover .show-image {
+  opacity: 1;
+  transform: scale(1.07);
+  transition: 1s ease-in-out;
+  
+}
 
 </style>
 
