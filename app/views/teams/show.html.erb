@@ -1,5 +1,35 @@
-<%= @team.name %><br>
+<h2><%= @team.name %></h2>
+<br>
 <%#binding.pry%>
+<div class="show-grid">
 <% @pokemons.each do |poke|%>
-<%= poke.name %>
+<a href="<%=pokemon_path(poke)%>" class="poke-link">
+<img src="<%=poke.image%>" class="show-image">
+</a>
 <%end%>
+</div>
+
+<style>
+
+.show-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  row-gap: 50px;
+  column-gap: 50px;
+  text-align: center;
+  justify-content: center;
+}
+
+.show-image {
+  display: block;
+  width: 340px;
+  height: auto;
+  box-shadow: 3px 4px 9px 7px #f7faff;
+  border-radius: 55px;
+}
+
+
+</style>
+
+
+

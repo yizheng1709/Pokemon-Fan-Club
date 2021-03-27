@@ -2,7 +2,7 @@ class TeamsController < ApplicationController
     layout "main"
     def show
         if current_user
-            binding.pry
+            # binding.pry
             @team = @user.teams.find_by(id: params[:id])
             @pokemons = @team.pokemons 
             render :show
@@ -31,7 +31,7 @@ class TeamsController < ApplicationController
     def create 
         @team = Team.create(team_params)
         @team.user = current_user
-        binding.pry
+        # binding.pry
         if @team.save
             redirect_to user_team_path(@user, @team)
         else 
