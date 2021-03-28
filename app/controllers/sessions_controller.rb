@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
     end
     def create 
-
+        
     end
     def destroy 
         session.clear 
@@ -20,8 +20,9 @@ class SessionsController < ApplicationController
         user = User.find_or_create_by(name: github_name) do |u|
             u.password = 'ThisIsADummyPasswordThatBcrpytNeedsSoThatTheUserWillSave'
             u.image = github_image
+            u.save
         end
-        if user.save 
+        if user
             session[:user_id] = user.id
             redirect_to user_path(current_user)
         else 
