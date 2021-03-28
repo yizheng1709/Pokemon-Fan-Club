@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   match '/auth/:provider/callback', to: 'sessions#create_with_github', via: [:get, :post]
-  resources :pokemons 
+  resources :pokemons, only: [:show, :index] 
   resources :users, only: [:show, :new, :create] do #show user's homepage; link to every team(if any)
     resources :teams 
   end 
