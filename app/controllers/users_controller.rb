@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     def show 
         if current_user
-            # binding.pry
+            @t = DateTime.now
             render :show, layout: "main"
         else 
             redirect_to root_path
