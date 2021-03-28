@@ -1,3 +1,32 @@
+<h2 class="index-title"> My Teams </h2>
+<br><br>
+<div class="index-div">
+<ul class="index-ul">
 <% @teams.each do |team| %>
-<%= render partial: 'team', locals: {team, team} %>
+<li><%= link_to team.name, user_team_path(current_user, team), class: "index-link" %></li>
 <%end%>
+</ul>
+</div>
+
+<style>
+
+.index-ul {
+    list-style-type: none;
+}
+
+.index-link {
+    font-family: "Chicken";
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.index-title {
+    text-align: center;
+    font-size: 40px;
+}
+
+.index-div {
+    text-align: center;
+}
+
+</style>
