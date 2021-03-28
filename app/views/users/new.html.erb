@@ -8,7 +8,10 @@
 <img src="/assets/snorlax1.png" class="form-line">
 <img src="/assets/pika1.png" class="form-line">
 </div><br><br>
+<div class="signup-div">
+<br><br><br>
 <%= render partial: 'form', locals: {user: @user}%>
+<br>
 </div>
 <br><br><br>
 <div class="form-pics">
@@ -19,7 +22,20 @@
 <img src="/assets/snorlax1.png" class="form-line">
 <img src="/assets/pika1.png" class="form-line">
 </div>
+</div>
 <style>
+
+.signup-div {
+    background-color: rgba(188, 229, 251, 0.35);
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 2px 2px 5px 2px #f0f0f0;
+    border-radius: 300px;
+}
 
 .form-line {
     width: 100px;

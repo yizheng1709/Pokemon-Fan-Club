@@ -42,6 +42,7 @@
 
 .edit-button {
     font-size: 15px;
+    transition-duration: 0.4s;
     font-family: "PokemonSolid";
     color: rgba(189, 198, 239, 1);
     background-color: white;
@@ -49,13 +50,19 @@
     padding: 22px 26px;
     font-size: 20px;
     letter-spacing: 3px;
-    border-radius: 15px;    
+    border-radius: 15px; 
+       
 }
 
 .edit-button:hover {
     background-color: rgba(198, 206, 241, 1);
     border: 2px solid rgba(165, 177, 233, 1);
-    color: white;    
+    color: white;   
+    transform: scale(1.1); 
+}
+
+.edit-button:active {
+    transform: translateY(4px);
 }
 
 .show-title {
