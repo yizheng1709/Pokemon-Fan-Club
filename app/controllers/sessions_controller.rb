@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
         render layout: "welcome"
     end
     def new 
-
+        @user = User.new 
     end
     def create 
-        
+
     end
     def destroy 
         session.clear 
@@ -36,5 +36,8 @@ class SessionsController < ApplicationController
     end
     def github_image 
         request.env['omniauth.auth']['info']['image']
+    end
+    def session_params 
+        params.require(:user).permit(:name, :password)
     end
 end
