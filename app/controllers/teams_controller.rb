@@ -2,8 +2,7 @@ class TeamsController < ApplicationController
     layout "main"
     def show
         if current_user
-            # binding.pry
-            @team = @user.teams.find_by(id: params[:id])
+            set_team
             @pokemons = @team.pokemons 
             render :show
         else 
@@ -30,10 +29,8 @@ class TeamsController < ApplicationController
     end
     def create 
         @team = Team.create(team_params)
-        # binding.pry
         @team.user = current_user
         if @team.save
-            # binding.pry
             redirect_to user_team_path(@user, @team)
         else 
             render :new 
@@ -42,7 +39,7 @@ class TeamsController < ApplicationController
 
     def edit 
         if current_user 
-            @team = Team.find_by_id(params[:id])
+            set_team
         else 
             redirect_to root_path
         end 
@@ -51,8 +48,15 @@ class TeamsController < ApplicationController
     def update
 
     end
-    
+
     def destroy 
+        if current_user 
+            set_team
+            @team.destroy 
+            redirect_to user_teams_path(@user)
+        else 
+            redirect_to user_teams_path(@user)
+        end
 
     end
 
@@ -60,6 +64,10 @@ class TeamsController < ApplicationController
 
     def team_params
       params.require(:team).permit(:user_id, :name, :pokemons_teams_attributes => [:pokemon_nickname, :pokemon_id])
+    end
+
+    def set_team
+        @team = @user.teams.find_by_id(params[:id])
     end
     
 end
