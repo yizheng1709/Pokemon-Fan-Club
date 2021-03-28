@@ -1,5 +1,5 @@
 <div class="signup-form">
-<p class="signup-title">Start your Pokemon journey now!</p><br><br>
+<p class="signup-title">Start your Pokémon journey now!</p><br><br>
 <div class="form-pics">
 <img src="/assets/eevee1.png" class="form-line">
 <img src="/assets/char1.png" class="form-line">
@@ -13,6 +13,12 @@
 <%= render partial: 'form', locals: {user: @user}%>
 <br>
 </div>
+<br><br><br>
+<%= button_to 'Start or Continue with GitHub', '/auth/github', class:'front-button'%>
+<br><br>
+<a href="<%=root_path%>">
+<button class="front-button">Back to Homepage</button>
+</a>
 <br><br><br>
 <div class="form-pics">
 <img src="/assets/eevee1.png" class="form-line">
@@ -64,5 +70,30 @@
     margin-right: auto;
     text-align: center;
     display: block;
+}
+
+.front-button {
+    padding: 22px 26px;
+    border-radius: 15px;
+    transition-duration: 0.4s;
+    background-color: white;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: rgba(189, 198, 239, 1);
+    font-family: "PokemonSolid";
+    box-shadow: 1px 1px 2px 1px #e3e3e3;
+    border: 2px solid #d1ceed;
+}
+
+.front-button:hover {
+  background-color: rgba(189, 198, 239, 1);
+  /* -webkit-text-stroke: 1.3px rgba(144, 162, 249, 1); */
+  color: white;
+  transform: scale(1.05);
+  border: 2px solid rgba(165, 177, 233, 1);
+}
+
+.front-button:active {
+  transform: translateY(4px);
 }
 </style>
