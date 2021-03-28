@@ -1,0 +1,66 @@
+<div class="form">
+ <%= render partial: 'form', locals: {pokemons: @pokemons, user: @user, team: @team} %> 
+</div>
+
+<style>
+.create_input {
+    border: 2px solid #d9dbff;
+    border-radius: 10px;
+    color: #5a75d1;
+    font-family: "Chicken";
+}
+
+.member {
+    font-family: "Chicken";
+    font-size: 25px;
+    color: rgba(165, 197, 233, 1);
+}
+.small-space {
+    padding-right: 10px;
+}
+.space {
+     padding-right: 30px;
+}
+
+.team-title {
+    text-align: center;
+    font-family: "PokemonSolid";
+    font-size: 39px;
+    letter-spacing: 2.9px;
+    color: #8ab9ff;
+    -webkit-text-stroke: 1.2px #bad6ff;
+}
+
+.team-title:hover {
+    color: #bad6ff;
+    -webkit-text-stroke: 1.2px #8ab9ff;
+}
+
+.submit-team {
+    font-family: 'PokemonSolid';
+    letter-spacing: 2px;
+}
+
+.form {
+    text-align: center;
+}
+
+.submit-input {
+    font-size: 15px;
+    font-family: "PokemonSolid";
+    color: rgba(189, 198, 239, 1);
+    background-color: white;
+    border: 2px solid #d1ceed;
+    padding: 22px 26px;
+    font-size: 20px;
+    letter-spacing: 3px;
+    border-radius: 15px;
+}
+
+.submit-input:hover {
+    background-color: rgba(198, 206, 241, 1);
+    border: 2px solid rgba(165, 177, 233, 1);
+    color: white;
+}
+
+</style>

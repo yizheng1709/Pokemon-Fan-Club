@@ -1,0 +1,21 @@
+
+<%= form_for(team, url: user_teams_path(user)) do |f|%>
+
+<p><%=f.label "Team Name", class: "member"%></p>
+  <%=f.text_field (:name), class: "create_input"%><br><br><br>
+
+  <%=f.fields_for :pokemons_teams do |poke_member| %>
+  <%=poke_member.label "Member", class: "member"%><span class="small-space"></span>
+  <%=poke_member.collection_select(:pokemon_id, pokemons, :id, :name) %><span class="space"></span>
+  <%=poke_member.label "Pokemon Nickname", class: "member" %><span class="small-space"></span>
+  <%=poke_member.text_field (:pokemon_nickname), class: "create_input" %> <br><br>
+<%end%>
+
+ <br><br><br>
+ <%if !team.id%>
+  <%=f.submit "Create Dream Team" , :class => "submit-input"%>
+  <%else%>
+  <%=f.submit "Edit Team" , :class => "submit-input"%>
+  <%end%>
+<%end%>
+

@@ -1,5 +1,7 @@
 class TeamsController < ApplicationController
     layout "main"
+    # before_action(:set_team, except: [:index, :new, :create])
+    
     def show
         if current_user
             set_team
@@ -40,18 +42,28 @@ class TeamsController < ApplicationController
     def edit 
         if current_user 
             set_team
+            @pokemons = Pokemon.all
         else 
             redirect_to root_path
         end 
     end
 
     def update
+        if current_user
+            set_team 
+            @team.save 
+            redirect_to user_team_path(@user, @team)
+        else 
+            @errors = @team.errors.full_messages
+            render :edit
+        end
 
     end
 
     def destroy 
         if current_user 
             set_team
+            PokemonsTeam.where(team_id: params[:id]).destroy_all
             @team.destroy 
             redirect_to user_teams_path(@user)
         else 

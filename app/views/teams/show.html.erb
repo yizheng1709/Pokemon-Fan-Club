@@ -29,7 +29,7 @@
 </button></a>
 
 <br><br><br>
-<%=button_to("Delete Team", @team, method: :delete, data: { confirm: "Say Goodbye to These Pokemon?" }, :class => "edit-button") %>
+<%= button_to("Delete Team", user_team_path(current_user, @team), method: :delete, data: { confirm: "Say Goodbye to These Pokemon?" }, :class => "edit-button") %>
 </div>
 <br>
 
