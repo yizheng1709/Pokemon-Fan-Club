@@ -1,12 +1,16 @@
 <h2 class="index-title"> My Dream Teams </h2>
-<br><br>
+<br><br><br>
 <div class="index-div">
 <br>
-<ul class="index-ul">
+
+<%if !@teams.empty?%>
 <% @teams.each do |team| %>
-<li class="index-li"><%= link_to team.name, user_team_path(current_user, team), class: "index-link" %></li>
+<p class="index-li"><%= link_to team.name, user_team_path(current_user, team), class: "index-link" %></p>
 <%end%>
-</ul>
+<%else%>
+<p class="index-li">Such empty :(</p>
+<%end%>
+
 <br>
 </div>
 <br><br><br>
@@ -44,10 +48,6 @@
 .div-for-button {
   text-align: center;
   justify-content: center;
-}
-
-.index-ul {
-    list-style-type: none;
 }
 
 .index-li {

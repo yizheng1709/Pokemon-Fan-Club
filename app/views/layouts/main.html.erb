@@ -3,7 +3,17 @@
 <head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 <br><br><br>
-<div class="title"><a href="<%=user_path(current_user)%>" class="no-link"><h1 class="rotate-center"><img src="/assets/pokeball.gif" class="ball">Pokémon Fan Club<img src="/assets/pokeball.gif" class="ball"></h1></a></div>
+
+<div class="title">
+<a href="<%=user_path(current_user)%>" class="no-link">
+<h1 class="rotate-center">
+<img src="/assets/pokeball.gif" class="ball"><span class="right-span"></span>
+Pokémon Fan Club
+<span class="left-span"></span>
+<img src="/assets/pokeball.gif" class="ball">
+</h1>
+</a>
+</div>
 
 <br><br>
 <div class="nav1">
@@ -80,6 +90,14 @@ html {
   font-style: normal;
 }
 
+.right-span {
+  padding-right: 13px;
+}
+
+.left-span {
+  padding-left: 13px;
+}
+
 .ball {
   width: 5%;
 }
@@ -144,15 +162,15 @@ html {
   font-family: "PokemonSolid";
   letter-spacing: 3px;
   font-size: 28px;
-  -webkit-text-stroke: 1px #8fb4ff;
+  -webkit-text-stroke: 1.5px #8fb4ff;
   color: #5886db;
 }
 
 .nav-link:hover {
   transform: scale(1.18);
   /* transition: 0.4s ease-in-out; */
-  color: #8458db;
-  -webkit-text-stroke: 1.5px #9c7be0;
+  color: #777bc9;
+  -webkit-text-stroke: 1.5px #a1a5ff;
 }
 
 .nav-link:active {
