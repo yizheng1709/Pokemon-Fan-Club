@@ -1,55 +1,18 @@
 <%= form_for user do |f|%>
+
 <label class="form-cred">Username</label><br>
 <%= f.text_field :name, :class => "signup-input" %><br><br>
 
 <label class="form-cred">Password</label><br>
 <%= f.password_field :password, :class => "signup-input" %> <br><br>
 
+<%if self.controller_name == "users"%>
 <label class="form-cred">Password Confirmation</label><br>
 <%= f.password_field :password_confirmation, :class => "signup-input" %> <br><br><br>
+<%else%>
+<br><br>
+<%end%>
 
-<%= f.submit "Start My Journey", :class => "start" %>
+<%= f.submit start_or_continue(self), :class => "start" %>
 <% end %>
 
-<style>
-
-.start {
-    font-family: "PokemonSolid";
-    color: rgba(189, 198, 239, 1);
-    background-color: white;
-    border: 2px solid #d1ceed;
-    padding: 15px 15px;
-    transition-duration: 0.4s;
-    font-size: 15px;
-    letter-spacing: 3px;
-    border-radius: 15px;
-    box-shadow: 1px 1px 4px 1px #e8f7ff; 
-}
-
-.start:hover {
-    transform: scale(1.1);
-    background-color: rgba(198, 206, 241, 1);
-    border: 2px solid rgba(165, 177, 233, 1);
-    color: white;
-}
-
-.start:active {
-  transform: translateY(4px);
-}
-
-.signup-input {
-    border: 2px solid #d9dbff;
-    border-radius: 10px;
-    color: #5a75d1;
-    font-family: "Chicken";
-    box-shadow: 1px 1px 4px 1px #e8f7ff; 
-
-}
-
-.form-cred {
-    font-family: "Chicken";
-    color: #699dff;
-    font-size: 23px;
-}
-
-</style>

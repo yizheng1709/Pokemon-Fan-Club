@@ -1,5 +1,5 @@
 
-<%= form_for(team, url: user_teams_path(user)) do |f|%>
+<%= form_for(team, url: team_url_helper(team, user)) do |f|%>
 
 <p><%=f.label "Team Name", class: "member"%></p>
   <%=f.text_field (:name), class: "create_input"%><br><br><br>
@@ -12,10 +12,10 @@
     <%end%>
 
  <br><br>
- <%if !team.id%>
-  <%=f.submit "Create Dream Team" , :class => "submit-input"%>
-  <%else%>
-  <%=f.submit "Edit Team" , :class => "submit-input"%>
-  <%end%>
+ <%#if !team.id%>
+  <%=f.submit create_or_edit(team) , :class => "submit-input"%>
+  <%#else%>
+  <%#f.submit "Edit Team" , :class => "submit-input"%>
+  <%#end%>
 <%end%>
 

@@ -1,5 +1,5 @@
 <div class="signup-form">
-<p class="signup-title">Start your Pokémon journey now!</p><br><br>
+<p class="signup-title"><%= begin_or_continue_journey(self)%></p><br><br>
 <div class="form-pics">
 <img src="/assets/eevee1.png" class="form-line">
 <img src="/assets/char1.png" class="form-line">
@@ -10,11 +10,16 @@
 </div><br><br>
 <div class="signup-div">
 <br><br><br>
+<%if self.controller_name == "users" %>
 <%= render partial: 'form', locals: {user: @user}%>
+<%else%>
+<br>
+<%= render partial: '/users/form', locals: {user: :user}%>
+<%end%>
 <br>
 </div>
 <br><br><br>
-<%= button_to 'Start with GitHub', '/auth/github', class:'front-button'%>
+<%= button_to start_or_continue_with_github(self), '/auth/github', class:'front-button'%>
 <br><br>
 <a href="<%=root_path%>">
 <button class="front-button">Back to Homepage</button>
@@ -30,6 +35,45 @@
 </div>
 </div>
 <style>
+
+.start {
+    font-family: "PokemonSolid";
+    color: rgba(189, 198, 239, 1);
+    background-color: white;
+    border: 2px solid #d1ceed;
+    padding: 15px 15px;
+    transition-duration: 0.4s;
+    font-size: 15px;
+    letter-spacing: 3px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 4px 1px rgba(179, 228, 255, 0.44); 
+}
+
+.start:hover {
+    transform: scale(1.1);
+    background-color: rgba(198, 206, 241, 1);
+    border: 2px solid rgba(165, 177, 233, 1);
+    color: white;
+}
+
+.start:active {
+  transform: translateY(4px);
+}
+
+.signup-input {
+    border: 2px solid #d9dbff;
+    border-radius: 10px;
+    color: #5a75d1;
+    font-family: "Chicken";
+    box-shadow: 1px 1px 4px 1px rgba(179, 228, 255, 0.54); 
+
+}
+
+.form-cred {
+    font-family: "Chicken";
+    color: #699dff;
+    font-size: 23px;
+}
 
 .signup-div {
     background-color: rgba(188, 229, 251, 0.35);
@@ -57,6 +101,11 @@
     font-family: "PokemonSolid";
     letter-spacing: 4px;
     font-size: 40px;
+    color: #7ab4ff;
+    -webkit-text-stroke: 1.5px #96c4ff;
+}
+
+.signup-title:hover {
     color: #7ab4ff;
     -webkit-text-stroke: 1.5px #96c4ff;
 }

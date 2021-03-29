@@ -1,11 +1,12 @@
 class SessionsController < ApplicationController 
     # protect_from_forgery prepend: true
     # skip_before_action :verify_authenticity_token, only: :create
+    layout "welcome"
     def home 
-        render layout: "welcome"
     end
     def new 
-        @user = User.new 
+        # @user = User.new 
+        render :"/users/new"
     end
     def create 
 
