@@ -9,7 +9,14 @@ class SessionsController < ApplicationController
         render :"/users/new"
     end
     def create 
-
+        user = User.find_by_name(params[:user][:name])
+        binding.pry
+        if user && user.authenticate(params[:user][:password])
+            redirect_to user_path(user)
+        else 
+            @errors = ["This username and password combination cannot be found."]
+            render :"/users/new"
+        end
     end
     def destroy 
         session.clear 

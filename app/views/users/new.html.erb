@@ -1,5 +1,5 @@
 <div class="signup-form">
-<p class="signup-title"><%= begin_or_continue_journey(self)%></p><br><br>
+<p class="signup-title"><%= begin_or_continue_journey(self)%></p><br>
 <div class="form-pics">
 <img src="/assets/eevee1.png" class="form-line">
 <img src="/assets/char1.png" class="form-line">
@@ -8,6 +8,12 @@
 <img src="/assets/snorlax1.png" class="form-line">
 <img src="/assets/pika1.png" class="form-line">
 </div><br><br>
+<%if @errors %>
+<%@errors.each do |e|%>
+<p class="errors"><%= e %></p><br>
+<%end%>
+<br>
+<%end%>
 <div class="signup-div">
 <br><br><br>
 <%if self.controller_name == "users" %>
@@ -35,6 +41,27 @@
 </div>
 </div>
 <style>
+
+.errors {
+    padding: 10px 5px;
+    width: 320px;
+    background-color: rgba(189, 198, 239, 0.6);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+    font-family: "Chicken";
+    border-radius: 15px;
+    box-shadow: 1px 1px 4px 1px #e3e3e3;
+    color: white;
+    font-size: 20px;
+    border: 2px solid white;
+}
+
+.errors:hover {
+    border: 2px solid rgba(165, 177, 233, 1);
+    color: rgba(165, 177, 233, 1);
+}
 
 .start {
     font-family: "PokemonSolid";
