@@ -11,11 +11,11 @@
 <%#binding.pry%>
 <div class="show-grid">
 <% @pokemons.each do |poke|%>
-<%#binding.pry%>
+<%#iterate through pokemons_teams instead of just team%>
 <div class="container">
 <a href="<%=pokemon_path(poke)%>" class="poke-link">
-<img src="<%=poke.image%>" class="show-image">
-<div class="overlay"><%= @team.pokemons_teams.find_by(pokemon_id: poke.id).pokemon_nickname%></div>
+<img src="<%=Pokemon.find_by_id(poke.pokemon_id).image%>" class="show-image">
+<div class="overlay"><%= poke.pokemon_nickname%></div>
 </a>
 </div>
 <%end%>
@@ -23,6 +23,11 @@
 <br><br><br>
 
 <div class="edit-div">
+<a href="<%=new_user_team_path%>">
+<button type="button" value="Add Another Dream Team" class="edit-button">
+    Add Another Dream Team
+</button></a>
+<br><br><br>
 <a href="<%=edit_user_team_path(current_user, @team)%>">
 <button type="button" value="Edit Team" class="edit-button">
     Edit Team

@@ -14,7 +14,7 @@
 <br>
 </div>
 <br><br><br>
-<%= button_to 'Start or Continue with GitHub', '/auth/github', class:'front-button'%>
+<%= button_to 'Start with GitHub', '/auth/github', class:'front-button'%>
 <br><br>
 <a href="<%=root_path%>">
 <button class="front-button">Back to Homepage</button>
@@ -95,5 +95,9 @@
 
 .front-button:active {
   transform: translateY(4px);
+}
+
+.field_with_errors {
+    display: inline;
 }
 </style>

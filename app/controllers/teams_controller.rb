@@ -5,7 +5,7 @@ class TeamsController < ApplicationController
     def show
         if current_user
             set_team
-            @pokemons = @team.pokemons 
+            @pokemons = @team.pokemons_teams 
             render :show
         else 
             redirect_to root_path 
@@ -20,8 +20,7 @@ class TeamsController < ApplicationController
         end 
     end
     def new
-        if params[:user_id]
-            @user = User.find_by(id: params[:user_id])
+        if current_user
             @team = @user.teams.build
             6.times { @team.pokemons_teams.build }
             @pokemons = Pokemon.all
@@ -31,10 +30,14 @@ class TeamsController < ApplicationController
     end
     def create 
         @team = Team.create(team_params)
-        @team.user = current_user
-        if @team.save
+        @team.update(user: current_user)
+        @errors = @team.errors.messages 
+        # binding.pry
+        if @errors.empty? && @team.save
+            # binding.pry
             redirect_to user_team_path(@user, @team)
         else 
+            @pokemons = Pokemon.all
             render :new 
         end 
     end

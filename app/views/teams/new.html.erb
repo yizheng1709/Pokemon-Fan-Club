@@ -1,12 +1,29 @@
  <h2 class="team-title"> New Dream Team! </h2><br><br>
-<% @errors && @errors.each do |e| %>
-  <li><%=e%></li>
+ <%if @errors%>
+ <div class="error-div">
+ <%@errors.each do |k, v| %>
+  <li><%=v[0]%></li>
+ <%end%>
+ <br>
+ </div>
 <%end%>
 <div class="form">
  <%= render partial: 'form', locals: {pokemons: @pokemons, user: @user, team: @team} %> 
 </div>
-
+<br><br>
+<div class="center-div">
+<a href="<%=user_teams_path(current_user)%>">
+<button type="button" value="Back to All Teams" class="submit-input">
+    Back to All Teams
+</button></a>
+</div>
 <style>
+
+.center-div {
+  text-align: center;
+  justify-content: center;
+}
+
 .create_input {
     border: 2px solid #d9dbff;
     border-radius: 10px;
@@ -72,6 +89,19 @@
 
 .submit-input:active {
   transform: translateY(4px);
+}
+
+.field_with_errors {
+    display: inline;
+}
+
+.error-div {
+    text-align: center;
+}
+
+.field_with_errors .create_input{
+  border: 2px solid #f76a6a !important;
+  box-shadow: 1px 1px 4px 1px #ffa3a3 !important;
 }
 
 </style>
