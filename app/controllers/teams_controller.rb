@@ -103,7 +103,7 @@ class TeamsController < ApplicationController
     # end
 
     def team_params
-      params.require(:team).permit(:user_id, :name, :pokemons_teams_attributes => [:pokemon_nickname, :pokemon_id])
+      params.require(:team).permit(:user_id, :name, :pokemons_teams_attributes => [:pokemon_nickname, :pokemon_id, :id])
     end
 
     def set_team

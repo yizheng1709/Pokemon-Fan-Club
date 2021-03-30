@@ -9,11 +9,13 @@ class Team < ApplicationRecord
 
         pokemon_hash.values.each do |value|
             poke = Pokemon.find_by_id(value["pokemon_id"]) 
-            pt = PokemonsTeam.create(pokemon_nickname: value["pokemon_nickname"])
-            pt.pokemon = poke
-            pt.team = self 
-            pt.save
-            self.pokemons_teams << pt
+            # binding.pry
+            if poketeam = PokemonsTeam.find_by_id(value["id"])
+                poketeam.update(pokemon_nickname: value[:pokemon_nickname])
+            else 
+                pt = PokemonsTeam.create(pokemon_nickname: value["pokemon_nickname"], pokemon: poke)
+                self.pokemons_teams << pt
+            end
         end
     end
 
