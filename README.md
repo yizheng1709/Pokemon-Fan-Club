@@ -35,6 +35,10 @@ There is a list of Pokémon movie summaries available for the user to browse thr
 
 ![Alt text](app/assets/images/readme02.gif?raw=true "Movies")
 
+Users can create their dream teams and give nicknames to their Pokémon.
+
+![Alt text](app/assets/images/readme03.gif?raw=true "Teams")
+
 
 ### Prerequisites
 

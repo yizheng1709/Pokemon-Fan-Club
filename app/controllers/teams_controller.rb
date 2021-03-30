@@ -50,7 +50,7 @@ class TeamsController < ApplicationController
             #         e
             #     end
             # end
-            binding.pry
+            # binding.pry
             render :new 
         end 
     end
@@ -73,7 +73,7 @@ class TeamsController < ApplicationController
     
         if @team.update(team_params)
             # @team.pokemons_teams.update(update_team_params) 
-            binding.pry
+            # binding.pry
             redirect_to user_team_path(@user, @team)
         else 
             @errors = @team.errors.full_messages
