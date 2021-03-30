@@ -24,4 +24,12 @@ module ApplicationHelper
             "Continue with GitHub"
         end
     end
+    def random_movie_or_pokemon
+        a = rand(2)
+        if a == 0
+            pokemon_path(rand(1..899))
+        else 
+            movie_path(rand(1..22))
+        end
+    end
 end
