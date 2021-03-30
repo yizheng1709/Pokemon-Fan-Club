@@ -27,9 +27,9 @@ module ApplicationHelper
     def random_movie_or_pokemon
         a = rand(2)
         if a == 0
-            pokemon_path(rand(1..899))
+            pokemon_path(rand(1..898))
         else 
-            movie_path(rand(1..22))
+            movie_path(rand(1..21))
         end
     end
 end

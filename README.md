@@ -29,7 +29,7 @@ The greatest joy for any Pokemon fan is being able to plan all of my dream teams
 
 Home Page
 
-![Alt text](app/assets/images/readme1.gif?raw=true "Home Page")
+![Alt text](app/assets/images/readme01.gif?raw=true "Home Page")
 
 
 

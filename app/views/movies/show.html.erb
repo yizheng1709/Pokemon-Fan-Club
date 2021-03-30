@@ -4,7 +4,7 @@
 <br>
 <h3 class="release"> <%= @movie.release_date %> </h3>
 <br>
-<img src="<%=@movie.image%>" class="movie-image">
+<img src="<%=@movie.image if !@movie.image.include?("blank")%>" class="movie-image">
 <br><br>
 
 <p class="content"> <%= @movie.content %> </p>
@@ -20,13 +20,22 @@
     -webkit-text-stroke: 0.7px #135f91;
 }
 
+.release:hover {
+    color: #8058c7;
+    -webkit-text-stroke: 0.7px #4a278a;
+}
+
 .show-title {
     color: #0085de;
     font-family: "Cafe";
     /* -webkit-text-stroke: 0.7px #135f91; */
     text-shadow: 2px 2px 3px #3a5d6e;
     size: 39px;
+}
 
+.show-title:hover {
+    color: #8058c7;
+    text-shadow: 2px 2px 3px #695e7d;
 }
 
 .content {
@@ -46,6 +55,15 @@
     padding-left: 60px;
     padding-right: 60px;
     border-radius: 20px;
+    border: 4px solid rgba(121, 195, 251, 0.47);
+    transition: 0.4s;
+    box-shadow: 3px 3px 10px 3px #ced5e0; 
+
+}
+
+.movie-div:hover {
+    transform: scale(1.07);
+    transition-timing-function: ease-in-out;
 }
 
 .movie-image {
@@ -57,7 +75,7 @@
 
 .movie-image:hover {
     transform: scale(1.1);
-
+    
 }
 
 </style>

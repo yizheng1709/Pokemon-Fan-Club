@@ -1,7 +1,12 @@
 <div class="search-bar">
-Search by type: <input type="search" class="search">
+<%= form_tag("/pokemons", :method => "get") do %>
+<span class="text-search">
+Search by Pokédex Number: 
+</span>
+<%= text_field_tag :query, "", class: "search" %>
 <span class="search-padding"></span>
 <button class="search-button">Search</button>
+<% end %>
 </div>
 <br><br>
 
@@ -17,6 +22,14 @@ Search by type: <input type="search" class="search">
 
 <style>
 
+.text-search {
+  padding-right: 10px;
+  font-family: "Cafe";
+  font-size: 18px;
+  color: #ff7d7d;
+
+}
+
 .search-padding {
   padding-left: 10px;
 }
@@ -24,6 +37,10 @@ Search by type: <input type="search" class="search">
 .search {
   border-radius: 10px;
   width: 200px;
+  box-shadow: 1px 1px 1px 1px #ffb0b0;
+  border: 1px solid #ff7d7d;
+  color: #2777cc;
+  font-family: "Cafe";
 }
 
 .search-button {
@@ -37,6 +54,10 @@ Search by type: <input type="search" class="search">
   padding-bottom: 3px;
   box-shadow: 1px 1px 1px 1px #ffb0b0; 
   color: #ff7d7d;
+}
+
+.search-button:active {
+  transform: translateY(4px);
 }
 
 .search-button:hover {
