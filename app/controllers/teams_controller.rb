@@ -32,13 +32,25 @@ class TeamsController < ApplicationController
     def create 
         @team = Team.create(team_params)
         @team.update(user: current_user)
-        @errors = @team.errors.messages 
         # binding.pry
-        if @errors.empty? && @team.save
+        if @team.save
             # binding.pry
             redirect_to user_team_path(@user, @team)
         else 
+            @errors = @team.errors.messages.values
+            # binding.pry
             @pokemons = Pokemon.all
+            @errors = @errors.map {|e| e.include?("is invalid") ? ["Pokemon Nickname can't be blank"] : e }
+            # binding.pry
+            # @errors.collect do |e|
+            #     if e.include?("is invalid")
+            #         # binding.pry
+            #         "Pokemon Nickname can't be blank"
+            #     else 
+            #         e
+            #     end
+            # end
+            binding.pry
             render :new 
         end 
     end
@@ -65,6 +77,8 @@ class TeamsController < ApplicationController
             redirect_to user_team_path(@user, @team)
         else 
             @errors = @team.errors.full_messages
+            binding.pry
+            @errors.map {|e| e.include?("teams") ? "Pokemon Nickname can't be blank" : e }
             render :edit
         end
 

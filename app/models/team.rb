@@ -25,7 +25,7 @@ class Team < ApplicationRecord
 
     def custom_name_validator 
         if self.name.nil? || self.name.empty?
-            self.errors.add(:name, "Team Name can't be blank.")
+            self.errors.add(:name, "Team Name can't be blank")
         end
     end
     #wrtie custom method to accept nested attributes of pokemonid and nickname, associate with current user

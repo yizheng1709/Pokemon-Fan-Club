@@ -1,8 +1,8 @@
  <h2 class="team-title"> New Dream Team! </h2><br><br>
  <%if @errors%>
  <div class="error-div">
- <%@errors.each do |k, v| %>
-  <p class="errors"><%=v[0]%></p><br>
+ <%@errors.each do |e| %>
+  <p class="errors"><%=e[0]%></p><br>
  <%end%>
  <br>
  </div>
