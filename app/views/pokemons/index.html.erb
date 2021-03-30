@@ -1,4 +1,9 @@
-
+<div class="search-bar">
+Search by type: <input type="search" class="search">
+<span class="search-padding"></span>
+<button class="search-button">Search</button>
+</div>
+<br><br>
 
 <div class="display-box">
 <% @pokemons.each do |p| %>
@@ -12,6 +17,33 @@
 
 <style>
 
+.search-padding {
+  padding-left: 10px;
+}
+
+.search {
+  border-radius: 10px;
+  width: 200px;
+}
+
+.search-button {
+  border-radius: 10px;
+  font-family: "Cafe";
+  background-color: white;
+  border: 1px solid #ff7d7d;
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  box-shadow: 1px 1px 1px 1px #ffb0b0; 
+  color: #ff7d7d;
+}
+
+.search-button:hover {
+  background-color: #ff7d7d;
+  color: white;
+}
+
 @font-face {
   font-family: 'PokemonSolid';
   src: url('/assets/PokemonSolid.ttf') format('truetype');
@@ -20,6 +52,10 @@
 }
 
 * {box-sizing: border-box}
+
+.search-bar {
+  text-align: center;
+}
 
 .display-box {
   display: grid;

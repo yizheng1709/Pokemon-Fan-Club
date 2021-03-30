@@ -1,6 +1,7 @@
 class Pokemon < ApplicationRecord
     has_many :pokemons_teams  
     has_many :teams, through: :pokemons_teams 
+    scope(:type_search, ->(type) { self.where("types = ?", type) })
 
     
     def check_abilities 

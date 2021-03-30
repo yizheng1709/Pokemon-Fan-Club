@@ -1,8 +1,8 @@
 <div class="movie-div">
 <br><br>
-<h1> <%= @movie.title %> </h1>
+<h1 class="show-title"> <%= @movie.title %> </h1>
 <br>
-<h3> <%= @movie.release_date %> </h3>
+<h3 class="release"> <%= @movie.release_date %> </h3>
 <br>
 <img src="<%=@movie.image%>" class="movie-image">
 <br><br>
@@ -13,6 +13,21 @@
 
 
 <style>
+
+.release {
+    color: #0085de;
+    font-family: "Cafe";
+    -webkit-text-stroke: 0.7px #135f91;
+}
+
+.show-title {
+    color: #0085de;
+    font-family: "Cafe";
+    /* -webkit-text-stroke: 0.7px #135f91; */
+    text-shadow: 2px 2px 3px #3a5d6e;
+    size: 39px;
+
+}
 
 .content {
     font-family: "Cafe";
@@ -30,10 +45,19 @@
     background-color: rgba(161, 210, 247, 0.33);
     padding-left: 60px;
     padding-right: 60px;
+    border-radius: 20px;
 }
 
 .movie-image {
     border-radius: 20px;
+    width: 159px;
+    box-shadow: 2px 2px 10px 2px #7b98a6; 
+
+}
+
+.movie-image:hover {
+    transform: scale(1.1);
+
 }
 
 </style>
