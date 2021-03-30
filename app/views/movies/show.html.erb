@@ -1,0 +1,39 @@
+<div class="movie-div">
+<br><br>
+<h1> <%= @movie.title %> </h1>
+<br>
+<h3> <%= @movie.release_date %> </h3>
+<br>
+<img src="<%=@movie.image%>" class="movie-image">
+<br><br>
+
+<p class="content"> <%= @movie.content %> </p>
+<br><br>
+</div>
+
+
+<style>
+
+.content {
+    font-family: "Chicken";
+    font-size: 20px;
+    color: #0085de;
+    -webkit-text-stroke: 0.25px white;
+
+}
+
+.movie-div {
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: rgba(161, 210, 247, 0.33);
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.movie-image {
+    border-radius: 20px;
+}
+
+</style>
