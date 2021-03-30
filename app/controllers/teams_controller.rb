@@ -32,25 +32,12 @@ class TeamsController < ApplicationController
     def create 
         @team = Team.create(team_params)
         @team.update(user: current_user)
-        # binding.pry
         if @team.save
-            # binding.pry
             redirect_to user_team_path(@user, @team)
         else 
             @errors = @team.errors.messages.values
-            # binding.pry
             @pokemons = Pokemon.all
             @errors = @errors.map {|e| e.include?("is invalid") ? ["Pokémon Nickname can't be blank"] : e }
-            # binding.pry
-            # @errors.collect do |e|
-            #     if e.include?("is invalid")
-            #         # binding.pry
-            #         "Pokemon Nickname can't be blank"
-            #     else 
-            #         e
-            #     end
-            # end
-            # binding.pry
             render :new 
         end 
     end
@@ -66,14 +53,10 @@ class TeamsController < ApplicationController
 
     def update
         set_team
-        # @team.pokemons_teams.update(pokemon)
-        # @team.pokemons_teams.each do |poke_member|
-        #     poke_member.update(update_team_params)
-        # endn
+
     
         if @team.update(team_params)
-            # @team.pokemons_teams.update(update_team_params) 
-            # binding.pry
+
             redirect_to user_team_path(@user, @team)
         else 
             @errors = @team.errors.full_messages
@@ -97,10 +80,6 @@ class TeamsController < ApplicationController
     end
 
     private
-
-    # def update_team_params 
-    #     params.permit(:pokemon_nickname, :pokemon_id)   
-    # end
 
     def team_params
       params.require(:team).permit(:user_id, :name, :pokemons_teams_attributes => [:pokemon_nickname, :pokemon_id, :id])
