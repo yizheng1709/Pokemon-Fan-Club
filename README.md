@@ -25,12 +25,15 @@ Things you may want to cover:
 
 # Pokeman Fan Club
 
-The greatest joy for any Pokemon fan is being able to plan all of my dream teams!
+The greatest joy for any Pokémon fan is being able to plan all of my dream teams!
 
-Home Page
+The homepage allows the user to signup or login through the web application's authentication and database or through GitHub's authentication system.
 
 ![Alt text](app/assets/images/readme01.gif?raw=true "Home Page")
 
+There is a list of Pokémon movie summaries available for the user to browse through. 
+
+![Alt text](app/assets/images/readme02.gif?raw=true "Movies")
 
 
 ### Prerequisites
