@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'pry'
 
-def get_page 
+def get_movie_page 
     link ="https://www.pokemon.com/us/pokemon-episodes/pokemon-movies/"
     doc = Nokogiri::HTML(URI.open(link))
     doc2 = doc.css("li")
@@ -30,16 +30,11 @@ def get_page
             content = doc[1].split("\t").collect {|e| e.strip}.delete_if{|n| n.empty?}[1]
             image = doc1.css(".episode-detail").css("img").attribute("src").text
             binding.pry
+            #movie.new(title: title, release_date: release_date, content: content, image: image)
         end 
     end 
 
-    #movie.create(title, release_date, content)
-
-
-    
-
-    # binding.pry
 
 end
 
-get_page
+get_movie_page
