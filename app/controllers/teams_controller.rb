@@ -53,7 +53,12 @@ class TeamsController < ApplicationController
     end
 
     def update
-        set_team 
+        set_team
+        # @team.pokemons_teams.update(pokemon)
+        # @team.pokemons_teams.each do |poke_member|
+        #     poke_member.update(update_team_params)
+        # endn
+    
         if @team.update(team_params)
             # @team.pokemons_teams.update(update_team_params) 
             binding.pry
@@ -79,8 +84,9 @@ class TeamsController < ApplicationController
 
     private
 
-    def update_team_params 
-        params.require(:team).permit(:user_id, :name, :pokemons_teams_attributes => [:pokemon_nickname, :pokemon_id])    end
+    # def update_team_params 
+    #     params.permit(:pokemon_nickname, :pokemon_id)   
+    # end
 
     def team_params
       params.require(:team).permit(:user_id, :name, :pokemons_teams_attributes => [:pokemon_nickname, :pokemon_id])

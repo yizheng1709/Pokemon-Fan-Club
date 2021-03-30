@@ -2,7 +2,7 @@
  <%if @errors%>
  <div class="error-div">
  <%@errors.each do |k, v| %>
-  <%=v[0]%><br>
+  <p class="errors"><%=v[0]%></p><br>
  <%end%>
  <br>
  </div>
@@ -18,6 +18,27 @@
 </button></a>
 </div>
 <style>
+
+.errors {
+    padding: 10px 2px;
+    width: 350px;
+    background-color: rgba(189, 198, 239, 0.6);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+    font-family: "Chicken";
+    border-radius: 15px;
+    box-shadow: 1px 1px 4px 1px #e3e3e3;
+    color: white;
+    font-size: 20px;
+    border: 2px solid white;
+}
+
+.errors:hover {
+    border: 2px solid rgba(165, 177, 233, 1);
+    color: rgba(165, 177, 233, 1);
+}
 
 .center-div {
   text-align: center;
