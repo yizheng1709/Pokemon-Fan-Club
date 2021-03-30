@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+    before_action(:redirect_to_root)
     layout "main"
 
     def show 
