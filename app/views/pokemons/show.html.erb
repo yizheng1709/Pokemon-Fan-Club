@@ -1,1 +1,70 @@
 <%= render partial: 'pokemon', locals: {pokemon: @pokemon} %>
+
+<style>
+
+.poke-box {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width:900px;
+    border: 7px solid #c4d7ff;
+    border-radius: 55px;
+    box-shadow: 8px 8px 25px 7px #ced5e0; 
+    background: rgba(99, 140, 222);
+    background: rgba(99, 140, 222, 0.22);
+}
+
+.poke-box:hover {
+    transform: scale(1.05);
+    transition: 1s ease-in-out;
+}
+
+.name-header {
+    font-family: "MilkyNice";
+    font-size: 50px;
+    text-align: center;
+    color: #ffffff;
+    -webkit-text-stroke: 1.3px #578cff;
+}
+
+.name-header:hover {
+    color: #578cff;
+}
+
+.poke-pic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.poke-info {
+    font-family: "MilkyNice";
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30em;  
+    font-size: 25px;
+    color: #ffffff;
+    -webkit-text-stroke: 1.2px #578cff;
+}
+
+.poke-info:hover {
+    color: #578cff;
+}
+
+.description {
+    font-family: "MilkyNice";
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25em;
+    font-size: 30px;
+    color: #ffffff;
+    -webkit-text-stroke: 1.5px #578cff;
+}
+
+.description:hover {
+    color: #578cff;
+}
+
+</style>

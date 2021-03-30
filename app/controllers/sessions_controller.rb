@@ -1,17 +1,15 @@
 class SessionsController < ApplicationController 
-    # protect_from_forgery prepend: true
-    # skip_before_action :verify_authenticity_token, only: :create
     layout "welcome"
     def home 
     end
     def new 
-        # @user = User.new 
         render :"/users/new"
     end
+
     def create 
         user = User.find_by_name(params[:user][:name])
-        binding.pry
         if user && user.authenticate(params[:user][:password])
+            session[:user_id] = user.id
             redirect_to user_path(user)
         else 
             @errors = ["This username and password combination cannot be found."]
@@ -24,7 +22,6 @@ class SessionsController < ApplicationController
     end
 
     def create_with_github
-        # binding.pry
         user = User.find_or_create_by(name: github_name) do |u|
             u.password = 'ThisIsADummyPasswordThatBcrpytNeedsSoThatTheUserWillSave'
             u.image = github_image
@@ -44,8 +41,5 @@ class SessionsController < ApplicationController
     end
     def github_image 
         request.env['omniauth.auth']['info']['image']
-    end
-    def session_params 
-        params.require(:user).permit(:name, :password)
     end
 end

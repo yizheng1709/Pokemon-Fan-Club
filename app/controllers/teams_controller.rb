@@ -40,7 +40,7 @@ class TeamsController < ApplicationController
             @errors = @team.errors.messages.values
             # binding.pry
             @pokemons = Pokemon.all
-            @errors = @errors.map {|e| e.include?("is invalid") ? ["Pokemon Nickname can't be blank"] : e }
+            @errors = @errors.map {|e| e.include?("is invalid") ? ["Pokémon Nickname can't be blank"] : e }
             # binding.pry
             # @errors.collect do |e|
             #     if e.include?("is invalid")
