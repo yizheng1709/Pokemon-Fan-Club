@@ -18,7 +18,6 @@ Search by
 </div>
 <br><br>
 
-<%if @pokemons.count != 1%>
 <div class="display-box">
 <% @pokemons.each do |p| %>
 <div class="container">
@@ -27,50 +26,9 @@ Search by
 </div>
 <% end %>
 </div>
-<%else%>
-<% @pokemons.each do |p| %>
-<div class="container-2">
- <a href="<%=pokemon_path(p)%>" class="poke-link"> <img src="<%=p.image%>" class="image-2">
-    <div class="overlay"><%=p.name%></div> </a>
-</div>
-<%end%>
-<%end%>
-
 
 <style>
 
-/* .gap {
-  padding-right: 5px;
-  padding-left: 5px;
-} */
-
-.image-2 {
-  display: inline;
-  width: 280px;
-  height: auto;
-  box-shadow: 3px 4px 9px 7px #f7faff;
-  border-radius: 55px;
-}
-
-.container-2 {
-  justify-content:center;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-.container-2:hover .overlay {
-  opacity: 1;
-  transform: scale(1.07);
-  transition: 0.5s ease-in-out;
-}
-
-.container-2:hover .image-2 {
-  opacity: 1;
-  transform: scale(1.07);
-  transition: 0.5s ease-in-out;
-
-}
 
 .searching_for {
   font-family: "Cafe";
@@ -142,11 +100,12 @@ Search by
   grid-template-columns: auto auto auto auto auto auto;
   row-gap: 30px;
   column-gap: 10px;
+  justify-content:center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
-.container {
-  box-sizing: border-box;
-}
 
 .image {
   display: block;
@@ -160,16 +119,20 @@ Search by
   text-decoration: none;
 }
 
+.container {
+  box-sizing: border-box;
+}
+
 .overlay {
   position: relative;
-  top: 5%;
+  /* top: 5%; */
   width: 100%;
   transition: .5s ease;
   opacity:0;
   color: white;
   -webkit-text-stroke: 2px #578cff;
   font-size: 30px;
-  padding: 5px;
+  padding-top: 15px;
   text-align: center;
   letter-spacing: 3px;
   font-family: "PokemonSolid";
