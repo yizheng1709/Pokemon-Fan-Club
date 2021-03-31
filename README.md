@@ -6,7 +6,12 @@ The homepage allows the user to signup or login through the web application's au
 
 ![Alt text](app/assets/images/readme01.gif?raw=true "Home Page")
 
-There is a list of Pokémon movie summaries available for the user to browse through. 
+When logging in through GitHub, the user's GitHub profile picture will be used as this web application's profile picture.
+
+![Alt text](app/assets/images/readme05.gif?raw=true "Omniauth GitHub")
+
+
+There is a list of Pokémon movie summaries available for the user to browse through.
 
 ![Alt text](app/assets/images/readme02.gif?raw=true "Movies")
 
@@ -16,7 +21,7 @@ Users can create their dream teams and give nicknames to their Pokémon.
 
 The Surprise Me section randomly generates a movie or Pokémon, so the user can easily turn it into a game to guess the next Pokémon's type or to guess whether the next page will be a movie or Pokémon.
 
-![Alt text](app/assets/images/readme04.gif?raw=true "Teams")
+![Alt text](app/assets/images/readme04.gif?raw=true "Surprise Me")
 
 
 ### Prerequisites
@@ -31,7 +36,7 @@ In your terminal:
 
     git clone <github-repo-code>
 
-Go to the first level directory that contains all of MyLife's folders. 
+Go to the first level directory that contains all of this repo's folders. 
 
     bundle install #this will install any necessary gems
 
