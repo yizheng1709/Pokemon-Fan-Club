@@ -1,9 +1,9 @@
 class PokemonsController < ApplicationController
     layout "main"
     def index
-        # binding.pry
         if params[:query] && !params[:query].empty?
-            @pokemons = Pokemon.pokedex_number_search(params[:query].to_i)
+            # binding.pry
+            @pokemons = Pokemon.type_search(params[:query])
             # binding.pry
         else 
             @pokemons = Pokemon.all

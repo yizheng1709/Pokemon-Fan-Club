@@ -1,7 +1,7 @@
 class Pokemon < ApplicationRecord
     has_many :pokemons_teams  
     has_many :teams, through: :pokemons_teams 
-    scope(:pokedex_number_search, ->(query) { self.where("pokedex_number = ?", query) })
+    scope(:type_search, ->(query) { self.where("types LIKE ?", "%#{query}%")})
 
     
     def check_abilities 
