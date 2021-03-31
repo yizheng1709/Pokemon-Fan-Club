@@ -25,7 +25,7 @@ The Surprise Me section randomly generates a movie or Pokémon, so the user can 
 
 The Pokémon section shows all Pokémon (from Bulbasaur to Calyrex) by default. The search function allows the user to filter out specific Pokémon by type, Pokédex number, or name. 
 
-![Alt text](app/assets/images/readme06.gif?raw=true "Pokémon")
+![Alt text](app/assets/images/readme06.gif?raw=true "Pokémon section")
 
 
 ### Prerequisites
@@ -44,7 +44,14 @@ Go to the first level directory that contains all of this repo's folders.
 
     bundle install #this will install any necessary gems
 
-Then, go to http://localhost:3000/. 
+Then,
+
+    rails db:migrate 
+    # this will set up the database tables
+    rails db:seed 
+    #this will load all of the data for the movies and Pokémon. This might take a few minutes as there is a lot of data.
+
+Finally go to http://localhost:3000/. 
 
 Enjoy!
 
