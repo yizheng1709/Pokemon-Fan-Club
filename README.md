@@ -48,6 +48,18 @@ Finally go to http://localhost:3000/.
 
 Enjoy!
 
+Note: The database is already provided; but if you want to seed the database over:
+    rails db:drop
+    rails db:migrate
+    rails db:seed
+    #the terminal might say there is an error
+    #if it does, run 
+    rails c
+    Pokemon.all.count
+    #should be 898
+    Movie.all.count
+    #should be 21
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code
