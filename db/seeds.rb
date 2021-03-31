@@ -77,7 +77,10 @@ def get_movie_page
     end 
 end
 
-get_page
+def scraper 
+    get_movie_page 
+    get_page 
+end
 
-get_movie_page
+scraper 
 
