@@ -1,34 +1,26 @@
 class TeamsController < ApplicationController
     layout "main"
-    # before_action(:set_team, except: [:index, :new, :create])
+    before_action(:current_user)
     before_action(:redirect_to_root)
+    before_action(:correct_user)
+    before_action(:set_team, only: [:show, :edit, :update, :destroy])
     
     def show
-        # if current_user
-            set_team
-            @pokemons = @team.pokemons_teams 
-            render :show
-        # else 
-        #     redirect_to root_path 
-        # end    
+        @pokemons = @team.pokemons_teams 
+        render :show    
     end
+
     def index 
-        # if current_user 
-            @teams = current_user.teams
-            render :index 
-        # else 
-        #     redirect_to root_path
-        # end 
+        @teams = current_user.teams
+        render :index 
     end
+
     def new
-        # if current_user
-            @team = @user.teams.build
-            6.times { @team.pokemons_teams.build }
-            @pokemons = Pokemon.all
-        #   else
-        #     redirect_to root_path
-        #   end
+        @team = @user.teams.build
+        6.times { @team.pokemons_teams.build }
+        @pokemons = Pokemon.all
     end
+
     def create 
         @team = Team.create(team_params)
         @team.update(user: current_user)
@@ -43,20 +35,11 @@ class TeamsController < ApplicationController
     end
 
     def edit 
-        # if current_user 
-            set_team
-            @pokemons = Pokemon.all
-        # else 
-        #     redirect_to root_path
-        # end 
+        @pokemons = Pokemon.all
     end
 
     def update
-        set_team
-
-    
         if @team.update(team_params)
-
             redirect_to user_team_path(@user, @team)
         else 
             @errors = @team.errors.full_messages
@@ -68,15 +51,10 @@ class TeamsController < ApplicationController
     end
 
     def destroy 
-        # if current_user 
-            set_team
-            PokemonsTeam.where(team_id: params[:id]).destroy_all
-            @team.destroy 
-            redirect_to user_teams_path(@user)
-        # else 
-        #     redirect_to root_path
-        # end
-
+        # set_team
+        PokemonsTeam.where(team_id: params[:id]).destroy_all
+        @team.destroy 
+        redirect_to user_teams_path(@user)
     end
 
     private

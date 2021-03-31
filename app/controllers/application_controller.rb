@@ -10,6 +10,12 @@ class ApplicationController < ActionController::Base
             redirect_to root_path
         end
     end
+
+    def correct_user 
+        if current_user != User.find_by_id(params[:user_id])
+            redirect_to user_path(current_user)
+        end
+    end
     # def begin_or_continue_journey(controller)
     #     if controller.class == UsersController 
     #         "Start Your Pokémon Journey Now"
