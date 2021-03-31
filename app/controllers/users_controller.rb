@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
-    # before_action(:current_user, only: [:show])
     before_action(:redirect_to_root, only: [:show])
-    # before_action(:correct_user, only: [:show])
     def show 
         if current_user
             @t = DateTime.now

@@ -1,7 +1,6 @@
 class PokemonsController < ApplicationController
     layout "main"
     def index
-        # binding.pry
         if params[:searching_for]
             p = params[:searching_for]
             if p == "types"
