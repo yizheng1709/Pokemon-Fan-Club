@@ -1,29 +1,4 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-# Pokeman Fan Club
+# Pokéman Fan Club
 
 The greatest joy for any Pokémon fan is being able to plan all of my dream teams!
 
@@ -39,10 +14,14 @@ Users can create their dream teams and give nicknames to their Pokémon.
 
 ![Alt text](app/assets/images/readme03.gif?raw=true "Teams")
 
+The Surprise Me section randomly generates a movie or Pokémon, so the user can easily turn it into a game to guess the next Pokémon's type or to guess whether the next page will be a movie or Pokémon.
+
+![Alt text](app/assets/images/readme04.gif?raw=true "Teams")
+
 
 ### Prerequisites
 
-This little web application was mainly written with the Ruby language and uses several gems. The Installing section will show you how to install this gem! 
+This little web application was mainly written with the Ruby language and uses several gems. The Installing section will show you how to install the gems!
 
 ### Installing
     
@@ -58,7 +37,10 @@ Go to the first level directory that contains all of MyLife's folders.
 
 Then,
 
-    rails db:seed #this will load all of the Pokemon's data. This might take a few minutes as there is a lot of data.
+    rails db:migrate 
+    # this will set up the database tables
+    rails db:seed 
+    #this will load all of the data for the movies and Pokémon. This might take a few minutes as there is a lot of data.
 
 Finally go to http://localhost:3000/. 
 
