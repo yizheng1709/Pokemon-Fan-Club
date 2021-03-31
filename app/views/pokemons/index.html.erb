@@ -2,7 +2,9 @@
 <%= form_tag("/pokemons", :method => "get") do %>
 <span class="text-search">
 Search by
-<select name="searching_for" id="cars">
+</span>
+<span class="text-search">
+<select name="searching_for" id="searching_for" class="searching_for">
   <option value="types">Type</option>
   <option value="pokedex_number">Pokédex Number</option>
   <option value="name">Name</option>
@@ -28,8 +30,17 @@ Search by
 
 <style>
 
+.searching_for {
+  font-family: "Cafe";
+  color: #ff7d7d;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px #ffb0b0;
+  border: 1px solid #ff7d7d;
+  height: 28.2px;
+}
+
 .text-search {
-  padding-right: 10px;
+  padding-right: 8px;
   font-family: "Cafe";
   font-size: 18px;
   color: #ff7d7d;
@@ -43,7 +54,7 @@ Search by
 .search {
   border-radius: 10px;
   width: 200px;
-  box-shadow: 1px 1px 1px 1px #ffb0b0;
+  box-shadow: 1px 1px 4px #ffb0b0;
   border: 1px solid #ff7d7d;
   color: #2777cc;
   font-family: "Cafe";
@@ -58,7 +69,7 @@ Search by
   padding-right: 9px;
   padding-top: 3px;
   padding-bottom: 3px;
-  box-shadow: 1px 1px 1px 1px #ffb0b0; 
+  box-shadow: 1px 1px 4px #ffb0b0; 
   color: #ff7d7d;
 }
 
