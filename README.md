@@ -44,13 +44,6 @@ Go to the first level directory that contains all of this repo's folders.
 
     bundle install #this will install any necessary gems
 
-Then,
-
-    rails db:migrate 
-    # this will set up the database tables
-    rails db:seed 
-    #this will load all of the data for the movies and Pokémon. This might take a few minutes as there is a lot of data.
-
 Finally go to http://localhost:3000/. 
 
 Enjoy!
