@@ -23,6 +23,10 @@ The Surprise Me section randomly generates a movie or Pokémon, so the user can 
 
 ![Alt text](app/assets/images/readme04.gif?raw=true "Surprise Me")
 
+The Pokémon section shows all Pokémon (from Bulbasaur to Calyrex) by default. The search function allows the user to filter out specific Pokémon by type, Pokédex number, or name. 
+
+![Alt text](app/assets/images/readme06.gif?raw=true "Pokémon")
+
 
 ### Prerequisites
 
