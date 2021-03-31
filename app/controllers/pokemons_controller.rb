@@ -1,10 +1,16 @@
 class PokemonsController < ApplicationController
     layout "main"
     def index
-        if params[:query] && !params[:query].empty?
-            # binding.pry
-            @pokemons = Pokemon.type_search(params[:query])
-            # binding.pry
+        # binding.pry
+        if params[:searching_for]
+            p = params[:searching_for]
+            if p == "types"
+                @pokemons = Pokemon.type_search(params[:query])
+            elsif p == "name"
+                @pokemons = Pokemon.name_search(params[:query])
+            else 
+                @pokemons = Pokemon.number_search(params[:query])
+            end 
         else 
             @pokemons = Pokemon.all
         end
@@ -12,11 +18,6 @@ class PokemonsController < ApplicationController
 
     def show 
         @pokemon = Pokemon.find_by(id: params[:id])
-    end
-
-    private 
-    def query_params
-        params.permit(:query)
     end
 
 end
