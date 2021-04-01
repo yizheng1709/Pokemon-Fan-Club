@@ -58,8 +58,12 @@ Note: The database is already provided; but if you want to seed the database ove
 ```
 ```
     rails c
+```
+```
     Pokemon.all.count
     #should be 898
+```
+```
     Movie.all.count
     #should be 21
 ```
