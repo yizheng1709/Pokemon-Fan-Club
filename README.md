@@ -55,6 +55,8 @@ Note: The database is already provided; but if you want to seed the database ove
     rails db:seed
     #the terminal might say there is an error
     #if it does, run 
+```
+```
     rails c
     Pokemon.all.count
     #should be 898
