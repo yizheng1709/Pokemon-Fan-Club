@@ -49,6 +49,7 @@ Finally go to http://localhost:3000/.
 Enjoy!
 
 Note: The database is already provided; but if you want to seed the database over:
+
     rails db:drop
     rails db:migrate
     rails db:seed

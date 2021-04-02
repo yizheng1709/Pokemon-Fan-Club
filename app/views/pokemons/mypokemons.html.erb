@@ -1,0 +1,137 @@
+<%# render partial: 'index' %>
+
+<div class="display-box">
+<% @pokemons.each do |p| %>
+<div class="container">
+ <a href="<%=pokemon_path(p)%>" class="poke-link"> <img src="<%=p.image%>" class="image">
+    <div class="overlay"><%=p.name%></div> </a>
+</div>
+<% end %>
+</div>
+
+<style>
+
+
+.searching_for {
+  font-family: "Cafe";
+  color: #ff7d7d;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px #ffb0b0;
+  border: 1px solid #ff7d7d;
+  height: 28.2px;
+}
+
+.text-search {
+  padding-right: 8px;
+  font-family: "Cafe";
+  font-size: 18px;
+  color: #ff7d7d;
+
+}
+
+.search-padding {
+  padding-left: 10px;
+}
+
+.search {
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 1px 1px 4px #ffb0b0;
+  border: 1px solid #ff7d7d;
+  color: #2777cc;
+  font-family: "Cafe";
+}
+
+.search-button {
+  border-radius: 10px;
+  font-family: "Cafe";
+  background-color: white;
+  border: 1px solid #ff7d7d;
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  box-shadow: 1px 1px 4px #ffb0b0; 
+  color: #ff7d7d;
+}
+
+.search-button:active {
+  transform: translateY(4px);
+}
+
+.search-button:hover {
+  background-color: #ff7d7d;
+  color: white;
+}
+
+@font-face {
+  font-family: 'PokemonSolid';
+  src: url('/assets/PokemonSolid.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {box-sizing: border-box}
+
+.search-bar {
+  text-align: center;
+}
+
+.display-box {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  row-gap: 30px;
+  column-gap: 10px;
+  justify-content:center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+
+.image {
+  display: block;
+  width: 280px;
+  height: auto;
+  box-shadow: 3px 4px 9px 7px #f7faff;
+  border-radius: 55px;
+}
+
+.poke-link {
+  text-decoration: none;
+}
+
+.container {
+  box-sizing: border-box;
+}
+
+.overlay {
+  position: relative;
+  /* top: 5%; */
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  -webkit-text-stroke: 2px #578cff;
+  font-size: 30px;
+  padding-top: 15px;
+  text-align: center;
+  letter-spacing: 3px;
+  font-family: "PokemonSolid";
+  /* border-radius: 55px; */
+}
+
+.container:hover .overlay {
+  opacity: 1;
+  transform: scale(1.07);
+  transition: 0.5s ease-in-out;
+}
+
+.container:hover .image {
+  opacity: 1;
+  transform: scale(1.07);
+  transition: 0.5s ease-in-out;
+
+}
+
+</style>

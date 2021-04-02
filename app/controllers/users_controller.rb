@@ -2,6 +2,7 @@ class UsersController < ApplicationController
     before_action(:redirect_to_root, only: [:show])
     def show 
         if current_user
+            # binding.pry
             @t = DateTime.now
             render :show, layout: "main"
         else 

@@ -19,4 +19,8 @@ class PokemonsController < ApplicationController
         @pokemon = Pokemon.find_by(id: params[:id])
     end
 
+    def mypokemons 
+        @pokemons = current_user.pokemons 
+    end
+
 end
