@@ -1,6 +1,6 @@
 # Pokéman Fan Club
 
-The greatest joy for any Pokémon fan is being able to plan all of my dream teams!
+The greatest joy for any Pokémon fan is being able to plan all of their dream teams!
 
 The homepage allows the user to signup or login through the web application's authentication and database or through GitHub's authentication system.
 
